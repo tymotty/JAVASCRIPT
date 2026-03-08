@@ -5,7 +5,7 @@ const Usuario = {
     Saldo: 2000
 }
 const RX6600 = {
-    Estoque: 0,
+    Estoque: 6,
     valor: 1750
 }
 if(Usuario.ContaAtiva === false) {
@@ -15,7 +15,7 @@ else if(Usuario.Idade < 16) {
     console.log(`Conta Barrada: Menor de idade`)
 }
 else{
-    if(RX6600.Estoque === 0) {
+    if(RX6600.Estoque <= 0) {
         console.log("Produto fora de estoque")
     }
     else if (RX6600.valor > Usuario.Saldo) {
