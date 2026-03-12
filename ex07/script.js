@@ -1,3 +1,7 @@
-const numeros = [2,4,6,8, 10]
+const algarismos = [1,2,3,4,5]
 
-const dobro = numeros.map()
+const dobro = algarismos.map((item, index, arrayCompleto) => {
+    return item *4
+})
+
+
