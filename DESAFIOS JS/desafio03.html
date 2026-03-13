@@ -7,12 +7,13 @@
 </head>
 <body>
     <input placeholder="Digite um item" type="text">
-    <button id="adicionar_Button">Adicionar item</button>
+    <button onclick="escolhido" id="adicionar_Button">Adicionar item</button>
     <ul>
         <li>Arroz</li>
         <li>Feijao</li>
         <li>Macarrao</li>
     </ul>
+
 <script>
     const carrinho = {
 
@@ -22,10 +23,11 @@
         {name: `Feijao`,estoque: 2, valor: 10},
         {name: `Macarrao`, estoque: 1, valor: 7 },
     ]
-    function Arroz(){
-        if (produtos.estoque <= 0){
+    function escolhido(){
+        function Arroz(){
             
         }
+        
     }
 </script>
 </body>

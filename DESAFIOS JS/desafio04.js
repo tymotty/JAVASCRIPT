@@ -11,17 +11,3 @@ const estoque = [
     { id: 10, nome: "Caixa de Som Portátil Sony", preco: 1000.00, temDesconto: false, quantidade: 3 }
 ]
 
-const novosProdutos = estoque.map(produto =>{
-    const precoNovo = temDesconto 
-    if (produto.preco* 0.9) 
-        else (produto.preco)
-    return {
-        id: estoque.id,
-        name: estoque.name,
-        quantidade: estoque.quantidade,
-        preco: precoNovo,
-
-    }
-
-})
-console.log (novosProdutos)
