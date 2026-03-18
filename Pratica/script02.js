@@ -12,16 +12,28 @@ let p = ('ped');
 
 let trazido = listName.push(p)
 
-
+listName.filter(nome => nome.startsWith("p"));
 
 console.log(listName)
 
-function filtrarPorF(nome){
-    if(name.stratsWith ("p")) {
-        return true;
-    } else {
-        return false;
-    }
 
+
+// FUNCTION NORMAL
+const a = 4
+const b = 9
+
+function subtracao(a, b) {
+    return a - b;
+}
+// (parametro)
+subtracao
+console.log (subtracao(a, b))
+
+//ARROW FUNCTION    
+
+const soma = (a, b) => {
+    return a + b;
 }
 
+console.log (soma(a,b))
+soma
