@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container_Product {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.block_Product {
+    background-color: yellow;
+    max-width: 350px;
+    border-radius: 10px;
+    border: solid black ;
+    text-align: center;
+    
+}
+
+h3 {
+    background-color: gray;
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+
+
+button {
+    margin-bottom: 15px;
+}
+#button_adicionar {
+    background-color: green;
+    padding: 7px;
+    border: 0;
+    border-radius: 5px;
+    width: 80px;
+}
+
+
+#button_remoner {
+    background-color: red;
+    padding: 7px;
+    border: 0;
+    border-radius: 5px;
+    width: 80px;
+}
+
