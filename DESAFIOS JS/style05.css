@@ -5,8 +5,9 @@ body {
 
 .container_Product {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 25px;
 }
 
 
@@ -16,6 +17,7 @@ body {
     border-radius: 10px;
     border: solid black ;
     text-align: center;
+    box-shadow: 7px 5px 5px rgba(219, 219, 219, 0.477);
     
 }
 
@@ -23,13 +25,11 @@ h3 {
     background-color: gray;
     padding: 10px;
     margin: 0;
-    border-radius: 10px 10px 0px 0px;
-
+    border-radius: 7px 7px 0px 0px;
 }
 
 
-
-button {
+button { /* Botao*/
     margin-bottom: 15px;
 }
 #button_adicionar {
