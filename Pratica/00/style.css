@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+main {
+    background-color: aqua;
+    width:1000px;
+    height: 100px;
+    
+}

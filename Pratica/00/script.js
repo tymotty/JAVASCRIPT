@@ -1,7 +1,54 @@
+const soma = document.querySelector('#aumentar')
 const contador = document.querySelector('#contador')
-const soma = document.querySelector('#botao')
+const diminuir = document.querySelector('#diminuir')
+const reset = document.querySelector('#reset')
 
-function soma() {
-    return contador + 1;
+
+
+
+let number = 0
+
+soma.addEventListener("click", contar)
+diminuir.addEventListener ("click", dimi)
+reset.addEventListener("click", reseter)
+
+
+
+
+function atualizacaoDeTela() {
+    
+    contador.textContent = number
+
+    if(number > 0) {
+        contador.style.color = "green"
+    } else if (number < 0){
+        contador.style.color = "red"
+    } else{
+        contador.style.color = "black"
+
+    } 
 }
-console.log (soma)
+
+
+function contar() {
+    number ++
+    atualizacaoDeTela()
+
+}
+
+function dimi() {
+
+    number --
+    atualizacaoDeTela()
+
+
+}
+
+function reseter() {
+    number = 0 
+    atualizacaoDeTela()
+}
+
+
+
+
