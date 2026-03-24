@@ -34,3 +34,41 @@ function retorneText() {
 
 }
 
+//lista Com botao de remover
+
+const inputList = document.querySelector  ("#inputList")
+const ulList = document.querySelector  ("#ulList")
+
+inputList.addEventListener("keydown", validacao)
+
+function validacao(event) {
+    if(event.key === "Enter"){
+        listReturn()
+    }
+} 
+
+function listReturn() {
+    const liElement = document.createElement("li")
+
+    liElement.textContent = inputList.value
+
+    ulList.appendChild (liElement)
+
+    inputList.value = ""
+
+    buttonRemove(liElement) 
+}
+
+function buttonRemove(liElement) {
+    const buttonRemoveList = document.createElement ("button")
+
+    buttonRemoveList.textContent = "Remover"
+
+    liElement.appendChild(buttonRemoveList)
+
+    buttonRemoveList.addEventListener ("click", function(){
+        liElement.remove()
+    })
+
+
+}
