@@ -15,3 +15,22 @@ function mudarCor(){
         corAtiva = false
     }
 }
+//usuaio digitado
+
+const textoEscrito = document.querySelector ("#textoEscrito")
+const textUsers = document.querySelector ("#textUsers")
+
+
+textoEscrito.addEventListener("keydown", verificarEnter)
+
+function verificarEnter(event) {
+    if (event.key === "Enter"){
+    retorneText()
+}}
+
+
+function retorneText() {
+    textUsers.textContent = textoEscrito.value
+
+}
+
