@@ -1,7 +1,13 @@
 body {
+ font-family: Arial;
+    margin: 0;
+    padding: 20px;
+
+}
+#container{
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .block {
     width: 250px;
@@ -13,8 +19,10 @@ body {
     text-align: center;
     background-color: rgb(132, 132, 132);
     
+    flex: 1 1 300px;
     
 }
+
 h2{
     color: gainsboro;
     border-bottom: 1px solid gainsboro;
@@ -25,7 +33,28 @@ h2{
 }
 
 .acao {
-    border-radius: 7px;
+    border-radius: 5px;
     border: 0px solid;
     color: rgb(62, 62, 62);
+}
+
+#buttonAdiciona {
+    background-color: green;
+    color: black;
+    border: 2px solid ;
+    border-radius: 7px;
+
+}
+#buttonReset {
+    background-color: blue;
+    color: black;
+    border: 2px solid ;
+    border-radius: 7px;
+
+}
+#buttonDiminui {
+    background-color: red;
+    color: black;
+    border: 2px solid ;
+    border-radius: 7px;
 }

@@ -72,3 +72,56 @@ function buttonRemove(liElement) {
 
 
 }
+
+//Contador com limite
+
+const botoes = document.querySelectorAll (".button")
+const contador = document.querySelector ("#contador")
+
+//Limites:
+const LIMITE_MAX = 10
+const LIMITE_MIN = -10
+
+let numero = 0
+
+//event
+botoes.forEach(function(button) {
+    button.addEventListener("click", controle)
+})
+
+
+//Controle dos botoes
+function controle (event) {
+    if (event.target.id === "buttonAdiciona"){
+        if (numero >= LIMITE_MAX) {
+            alert ("Voce chegou no numero limite")
+        }
+        else {
+            numero ++
+        }
+    }
+
+
+    else if (event.target.id === "buttonDiminui"){
+        if(numero <= LIMITE_MIN){
+            alert ("Voce chegou no numero limite")
+        }
+        else {
+            numero--
+        }
+    }
+
+
+    else if (event.target.id === "buttonReset"){
+        numero = 0
+    }
+
+atulizadorTela() 
+}
+
+
+//Atulizador de Tela
+function atulizadorTela() {
+        contador.textContent = numero
+
+}
