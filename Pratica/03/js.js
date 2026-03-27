@@ -1,4 +1,4 @@
-//Botao mudar de cor
+//////////////////////////////////Botao Mudar de Cor/////////////////////////////////
 const buttonColor = document.querySelector("#buttonColor")
 
 let corAtiva = false
@@ -15,7 +15,7 @@ function mudarCor(){
         corAtiva = false
     }
 }
-//usuaio digitado
+////////////////////////////////////Texto Escrito////////////////////////////////////
 
 const textoEscrito = document.querySelector ("#textoEscrito")
 const textUsers = document.querySelector ("#textUsers")
@@ -34,7 +34,7 @@ function retorneText() {
 
 }
 
-//lista Com botao de remover
+///////////////////////////lista Com botao de remover////////////////////////////////
 
 const inputList = document.querySelector  ("#inputList")
 const ulList = document.querySelector  ("#ulList")
@@ -73,7 +73,7 @@ function buttonRemove(liElement) {
 
 }
 
-//Contador com limite
+/////////////////////////////Contador com limite/////////////////////////////////////
 
 const botoes = document.querySelectorAll (".button")
 const contador = document.querySelector ("#contador")
@@ -124,4 +124,63 @@ atulizadorTela()
 function atulizadorTela() {
         contador.textContent = numero
 
+}
+
+//////////////////////////////Lista com Filtro/////////////////////////////////////
+const inputFiltro = document.querySelector("#inputFiltro")
+const ulFiltro = document.querySelector("#ulFiltro")
+
+inputFiltro.addEventListener ("keydown", confimacao)
+
+function confimacao(event) {
+    if (event.key === "Enter") {
+        liFiltro()
+    }
+}
+
+function liFiltro() {
+
+    if(inputFiltro.value === "") return
+    
+    const liFilterElment = document.createElement("li")
+
+    const valor = inputFiltro.value
+
+    liFilterElment.textContent = valor
+
+    ulFiltro.appendChild(liFilterElment)
+          
+    inputFiltro.value = ""
+    
+    buttonRemoveFilter(liFilterElment)
+
+    Filtragem(liFilterElment, valor)
+}
+
+
+function buttonRemoveFilter(liFilterElment) {
+    const buttomRemove = document.createElement ("button")
+
+    buttomRemove.textContent = "Remover"
+
+    liFilterElment.appendChild (buttomRemove)
+
+    buttomRemove.addEventListener ("click", function(){
+        liFilterElment.remove()
+    })
+    buttomRemove.style.backgroundColor = "red"
+
+    Filtragem(liFilterElment, inputFiltro.value)
+}
+
+function Filtragem (liFilterElment, valor) {
+
+    const numero = Number(valor)
+
+    if (numero % 3 === 0){
+        liFilterElment.style.color = "green"
+    } 
+    else if (numero % 2 === 0) {
+        liFilterElment.style.color= "red"
+    }
 }
