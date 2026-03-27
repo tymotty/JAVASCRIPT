@@ -37,7 +37,7 @@ h2{
     border: 0px solid;
     color: rgb(62, 62, 62);
 }
-
+/*----------------------------------------Button-----------------------------------*/
 #buttonAdiciona {
     background-color: green;
     color: black;
@@ -65,3 +65,24 @@ button {
     margin: 10px;
     padding: 3px;
 }
+/*---------------------------------Carrinho de compras-----------------------------*/
+#Carrinho_Block{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.produto{
+    width: 250px;
+    height: 250px;
+    
+    border: 1px solid black;
+    border-radius: 7px;
+    
+    text-align: center;
+    background-color: rgb(132, 132, 132);
+    
+    flex: 1 1 300px;
+}
+    h1 {
+        text-align: center;
+    }

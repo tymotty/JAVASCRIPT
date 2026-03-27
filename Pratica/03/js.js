@@ -173,6 +173,7 @@ function buttonRemoveFilter(liFilterElment) {
     Filtragem(liFilterElment, inputFiltro.value)
 }
 
+
 function Filtragem (liFilterElment, valor) {
 
     const numero = Number(valor)
@@ -182,5 +183,30 @@ function Filtragem (liFilterElment, valor) {
     } 
     else if (numero % 2 === 0) {
         liFilterElment.style.color= "red"
+    }
+}
+
+////////////////////////////////////Carrinho/////////////////////////////////////////
+const produto = document.querySelectorAll (".buttonProduto")
+const carrinho = document.querySelector ("#carrinho")
+const valorTotal = document.querySelector ("#valorTotal")
+
+let listaCarrinho = []
+let valor = []
+
+valorTotal = valor
+carrinho = listaCarrinho
+
+produto.forEach(function(produto){
+    produto.addEventListener ("click", validacaoDeBotao)
+})
+
+
+function validacaoDeBotao (listaCarrinho, event) {
+    if (event.target.dataset.nome === "Produto 01" ) {
+        if (event.target.dataset.acao === Adicionar) {
+            listaCarrinho ++
+            
+        }
     }
 }
