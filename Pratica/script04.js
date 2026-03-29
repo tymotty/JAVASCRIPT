@@ -38,3 +38,17 @@ const totalVenda = produtos.reduce((acumulador, atual) => {
 
 const promocao = produtos.filter(produto => (produto.temDesconto))
 
+// Tudo em um
+
+const faturamentoTotal = produtos
+    .map((produto) => {
+        return { ...produto, quantidade: produto.quantidade + 10 }
+    })
+
+    .filter((produto) => produto.temDesconto)
+
+    .reduce(
+        (acumulador, produto) =>
+            acumulador + produto.preco * produto.quantidade, 0,)
+
+console.log(faturamentoTotal)
