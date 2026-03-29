@@ -27,3 +27,14 @@ const novosProdutos = produtos.map(produto => {
 })
 
 
+//Quantidade total de estoque 
+
+const totalVenda = produtos.reduce((acumulador, atual) => {
+
+    return acumulador + (atual.preco * atual.quantidade)
+}, 0)
+
+//Filter
+
+const promocao = produtos.filter(produto => (produto.temDesconto))
+
