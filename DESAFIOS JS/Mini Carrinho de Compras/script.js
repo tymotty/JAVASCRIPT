@@ -1,28 +1,34 @@
+/*-------------------------------------------------------------------------------- */
 const carrinho = document.querySelector("#carrinho")
 const buttonProduto = document.querySelectorAll(".AdicionarProduto")
 
+
+/*forEach adiciona o mesmo evento a todos os botoes, no caso o click */
 buttonProduto.forEach(botao => {
   botao.addEventListener("click", verificacaoProduto)
 })
 
-carrinho = []
-
-function verificacaoProduto(event, carrinho){
+function verificacaoProduto(event, carrinho) {
   const id = event.target.dataset.id
-
-  const produtoId = estoque.find(item => item.id === id)
-
-  carrinho.push(produtoId)
-
+  /*dataset.id: Ta pegando o valor q foi clicado, qual id no caso */
+  
+  const produto = estoque.find(item => item.id === id)
+  /*Aqui o Find esta fazendo um papel de pesquisa, ele esta procurando o produto no estoque, com o nome de item, fazendo com q o primeiro produto igual ao id apareca */
+  carrinho.push(produto)
+  
   console.log(carrinho)
 }
 
-
+carrinho = [ ]
 
 const estoque = [
-  { id: "1", nome: "Mouse Gamer", preco: 89.90, quantidade: 2 },
-  { id: "2", nome: "Teclado Mecânico", preco: 249.90 },
-  { id: "3", nome: "Monitor 24 Polegadas", preco: 899.90 },
-  { id: "4", nome: "Headset Gamer", preco: 179.90 },
-  { id: "5", nome: "Mousepad Grande", preco: 39.90 }
+  { id: "1", nome: "Notebook Dell Inspiron", preco: 3499.99,quantidade: 2 },
+  { id: "2", nome: "Mouse Gamer RGB",        preco: 149.90, quantidade: 7 },
+  { id: "3", nome: "Teclado Mecânico",       preco: 299.90, quantidade: 9 },
+  { id: "4", nome: "Monitor 24 Full HD",     preco: 799.00, quantidade: 3 },
+  { id: "5", nome: "Headset Gamer",          preco: 249.90, quantidade: 5 },
+  { id: "6", nome: "Mousepad Gamer",         preco: 59.00 , quantidade: 11},
+  { id: "7", nome: "SSD 1TB NVMe",           preco: 449.90, quantidade: 1 },
+  { id: "8", nome: "Cadeira Gamer",          preco: 599.00, quantidade: 3 },
+  { id: "9", nome: "Notebook Delta 16Gb Ram",preco: 3999.00,quantidade: 1 }
 ]
