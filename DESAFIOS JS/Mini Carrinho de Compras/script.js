@@ -1,12 +1,29 @@
 /*-------------------------------------------------------------------------------- */
-const carrinho = document.querySelector("#carrinho")
+let carrinho = document.querySelector("#carrinho")
 const buttonProduto = document.querySelectorAll(".AdicionarProduto")
+const quantidadeDeProduto = document.querySelectorAll(".quantidade")
 
 
+
+/*-----------------------------------Eventos-------------------------------------- */
 /*forEach adiciona o mesmo evento a todos os botoes, no caso o click */
+
+quantidadeDeProduto.forEach
+
+
 buttonProduto.forEach(botao => {
   botao.addEventListener("click", verificacaoProduto)
 })
+
+
+/*------------------------------------Function-------------------------------------*/
+
+function verificacaoQuantida(event){
+  const quantity = event.target.dataset.quantidade
+
+  const produtoQuantidade = estoque.find(item => item.quantidade === quantidade)
+}
+
 
 function verificacaoProduto(event, carrinho) {
   const id = event.target.dataset.id
@@ -16,7 +33,22 @@ function verificacaoProduto(event, carrinho) {
   /*Aqui o Find esta fazendo um papel de pesquisa, ele esta procurando o produto no estoque, com o nome de item, fazendo com q o primeiro produto igual ao id apareca */
   carrinho.push(produto)
   
+  atualizarHTML()
+  
   console.log(carrinho)
+}
+
+
+
+/*------------------------------------Estoque-------------------------------------*/
+function atualizarHTML(id, quantidade){
+
+  const elemento = document.querySelector(`[data-id="${id}"].quantidade`)
+
+  if(elemento){
+    elemento.textContent = quantidade
+  }
+
 }
 
 carrinho = [ ]
