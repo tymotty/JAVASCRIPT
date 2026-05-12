@@ -146,6 +146,76 @@ console.log(quantidadeVogais)
 // - menor númerod
 console.log("Desafio do maior numero")
 const numeros = [12, 5, 88, 1, 43, 99, 23];
+let maiorValor = -Infinity;
+let menorValor = Infinity;
+
+for (let i = 0; i < numeros.length; i++) {
+    if (maiorValor < numeros[i]) {
+        maiorValor = numeros[i]
+    }
+    else if (numeros[i] < menorValor) {
+        menorValor = numeros[i]
+    }
+}
+console.log(`O maior numero é ${maiorValor}`)
+console.log(`O menor numero é ${menorValor}`)
+
+
+
+
+// Crie um novo array sem números repetidos
+// NÃO use Set
+console.log('Crie um novo array sem números repetidos')
+const numerosRepetidos = [1, 2, 2, 3, 4, 4, 5, 6, 6];
+let numeroUnico = []
+
+for (let i = 0; i < numerosRepetidos.length; i++) {
+    if (!numeroUnico.includes(numerosRepetidos[i])) {
+        numeroUnico.push(numerosRepetidos[i])
+    }
+}
+console.log(numeroUnico)
+
+// Descubra quantas vezes cada letra aparece
+// Resultado esperado:
+// {
+//   a: 3,
+//   b: 2,
+//   c: 1
+// }
+console.log("Descubra quantas vezes cada letra aparece")
+const texto = ["a", "b", "a", "c", "b", "a"];
+let frequenciaLetra = {}
+
+for (let i = 0; i< texto.length; i++){
+    const letra = texto[i];
+    
+    if(frequenciaLetra[letra]){
+        frequenciaLetra[letra] +=1;
+    }else
+        frequenciaLetra[letra] = 1
+}
+console.log(frequenciaLetra)
+
+
+
+// Descubra o segundo maior número
+console.log("Descubra o segundo maior numero")
+
+const tabela = [10, 5, 80, 25, 70];
+let primeiroMaior = -Infinity
+let segundoMaior  = -Infinity
+for(let i = 0; i<tabela.length; i++){
+    let numeroAtual = tabela[i];
+    if (numeroAtual > primeiroMaior) {
+        segundoMaior = primeiroMaior
+        primeiroMaior = numeroAtual
+    } else if ( numeroAtual > segundoMaior){
+        segundoMaior = numeroAtual
+    }
+}
+console.log(primeiroMaior)
+console.log(segundoMaior)
 
 
 
