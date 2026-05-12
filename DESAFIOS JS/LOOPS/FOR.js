@@ -123,22 +123,70 @@ console.log(invertida);
 //-----------------------------------------------------------------------------------
 //--------------------------------Dificuldade: Media---------------------------------
 //-----------------------------------------------------------------------------------
+
+//Tive que usar nomes diferentes nas variaveis por ter feito inicialmente tudo em um arquivo, so organizei melhor depois de ja ter feito
+
+
 // Conte quantas vogais existem
 const frase = "JavaScript é muito poderoso";
+const vogais = "aeiouAEIOUéÉ"
+let quantidadeVogais = 0
 
-for (let letra = 0; letra < frase.length; letra++){
-    console.log(letra)
+for (let letra = 0; letra < frase.length; letra++) {
+    if (vogais.includes(frase[letra])) {
+        quantidadeVogais++
+    }
 }
+console.log(quantidadeVogais)
+
+
+
 // Descubra:
 // - maior número
 // - menor númerod
-
+console.log("Desafio do maior numero")
 const numeros = [12, 5, 88, 1, 43, 99, 23];
 
 
 
 
+// Descubra se a palavra é igual de trás pra frente
+// Resultado esperado: true
+console.log("Descubra se a palavra é igual de trás pra frente")
 
+const palavraNormal = "arara";
+
+let palavraInvertida = "";
+
+for (let i = palavraNormal.length - 1; i >= 0; i--) {
+  palavraInvertida += palavraNormal[i];
+}
+
+const resultado = palavraNormal === palavraInvertida;
+
+console.log(resultado);
+
+
+
+
+// Crie:
+// um array com pares
+// outro com ímpares
+console.log("Criar um array com pares e outro com impares")
+const numerosSemSeparacao = [1,2,3,4,5,6,7,8];
+let Pares = []
+let Impares = []
+
+for (let i = 0; i<numerosSemSeparacao.length; i++){
+    let numeroAtual = numerosSemSeparacao[i]
+    if(numeroAtual % 2 === 0 ){
+        Pares.push(numeroAtual)
+    } else{
+        Impares.push(numeroAtual)
+    }
+}
+console.log (Impares)
+console.log (Pares)
 
 
 
