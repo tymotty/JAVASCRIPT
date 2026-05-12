@@ -191,6 +191,109 @@ console.log (Pares)
 
 
 
+// Crie um novo array onde cada número é multiplicado por 2
+// NÃO use map
+console.log("Crie um novo array onde cada número é multiplicado por 2")
+const numerosQueSeraoMultiplicados = [2,4,6,8];
+let numeroMultiplicado = []
+
+for (let i = 0; i< numerosQueSeraoMultiplicados.length; i++){
+    let numeroAtual = numerosQueSeraoMultiplicados[i]
+
+    numeroMultiplicado.push(numeroAtual *2 )
+}
+console.log(numeroMultiplicado)
+
+// Mostre apenas os números repetidos
+// Resultado esperado: [1,2]
+console.log(" Mostre apenas os números repetidos");
+
+const NumerosRepetidos = [1,2,3,2,4,5,1,6];
+let NumerosSemRepeticao = []
+let NumerosComRepeticao = []
+for (let i = 0; i< NumerosRepetidos.length; i++){
+    let numeroAtual = NumerosRepetidos[i]
+
+    if (NumerosSemRepeticao.includes(numeroAtual)){
+        NumerosComRepeticao.push(numeroAtual)
+    } else {
+        NumerosSemRepeticao.push(numeroAtual)
+
+    }
+}
+console.log( NumerosComRepeticao)
+console.log(NumerosSemRepeticao)
+
+
+
+
+// Inverta sem usar reverse()
+console.log("Inverta sem usar reverse()")
+const numerosComuns = [1,2,3,4,5];
+let numerosInvertidos = []
+
+for (let i = numerosComuns.length; i >= 0; i--){
+    let numeroAtual = numerosComuns[i]
+    numerosInvertidos.push(numeroAtual)
+}
+console.log(numerosInvertidos)
+
+
+// Some todos os números da matriz
+// Resultado esperado: 21
+console.log("Some todos os números da matriz")
+const matriz = [
+  [1,2],
+  [3,4],
+  [5,6]
+];
+let somaMatrizes= 0
+
+for (let i = 0; i< matriz.length; i++){
+    let linhaAtual = matriz[i]
+
+    for(let numeroAtual= 0; numeroAtual <linhaAtual.length; numeroAtual++){
+        somaMatrizes += linhaAtual[numeroAtual]
+    }
+}
+console.log(somaMatrizes)
+
+
+
+
+// Resultado esperado:
+// 1
+// 12
+// 123
+// 1234
+// 12345
+console.log("Escada Numerica")
+
+const numerosEscada = [1,2,3,4,5,6,7,8,9,10]
+let escada = []
+
+for (let i = 0; i< numerosEscada.length; i++){
+    let numeroAtual = numerosEscada[i]
+
+    escada += numeroAtual
+    console.log(escada)
+}
+
+
+
+// Descubra qual palavra tem mais letras
+console.log("Descubra qual palavra tem mais letras")
+
+const palavras = ["banana", "uva", "abacaxi", "melancia"];
+let MaiorPalavra = "";
+for (let i = 0; i < palavras.length; i++){
+    let palavraAtual = palavras[i];
+    if (palavraAtual.length > MaiorPalavra.length){
+        MaiorPalavra = palavraAtual;
+    }
+}
+
+console.log(MaiorPalavra);
 //-----------------------------------------------------------------------------------
-//--------------------------------Dificuldade: Media---------------------------------
+//-----------------------------Dificuldade: Dificiel---------------------------------
 //-----------------------------------------------------------------------------------
