@@ -187,12 +187,12 @@ console.log("Descubra quantas vezes cada letra aparece")
 const texto = ["a", "b", "a", "c", "b", "a"];
 let frequenciaLetra = {}
 
-for (let i = 0; i< texto.length; i++){
+for (let i = 0; i < texto.length; i++) {
     const letra = texto[i];
-    
-    if(frequenciaLetra[letra]){
-        frequenciaLetra[letra] +=1;
-    }else
+
+    if (frequenciaLetra[letra]) {
+        frequenciaLetra[letra] += 1;
+    } else
         frequenciaLetra[letra] = 1
 }
 console.log(frequenciaLetra)
@@ -204,13 +204,13 @@ console.log("Descubra o segundo maior numero")
 
 const tabela = [10, 5, 80, 25, 70];
 let primeiroMaior = -Infinity
-let segundoMaior  = -Infinity
-for(let i = 0; i<tabela.length; i++){
+let segundoMaior = -Infinity
+for (let i = 0; i < tabela.length; i++) {
     let numeroAtual = tabela[i];
     if (numeroAtual > primeiroMaior) {
         segundoMaior = primeiroMaior
         primeiroMaior = numeroAtual
-    } else if ( numeroAtual > segundoMaior){
+    } else if (numeroAtual > segundoMaior) {
         segundoMaior = numeroAtual
     }
 }
@@ -229,7 +229,7 @@ const palavraNormal = "arara";
 let palavraInvertida = "";
 
 for (let i = palavraNormal.length - 1; i >= 0; i--) {
-  palavraInvertida += palavraNormal[i];
+    palavraInvertida += palavraNormal[i];
 }
 
 const resultado = palavraNormal === palavraInvertida;
@@ -243,20 +243,20 @@ console.log(resultado);
 // um array com pares
 // outro com ímpares
 console.log("Criar um array com pares e outro com impares")
-const numerosSemSeparacao = [1,2,3,4,5,6,7,8];
+const numerosSemSeparacao = [1, 2, 3, 4, 5, 6, 7, 8];
 let Pares = []
 let Impares = []
 
-for (let i = 0; i<numerosSemSeparacao.length; i++){
+for (let i = 0; i < numerosSemSeparacao.length; i++) {
     let numeroAtual = numerosSemSeparacao[i]
-    if(numeroAtual % 2 === 0 ){
+    if (numeroAtual % 2 === 0) {
         Pares.push(numeroAtual)
-    } else{
+    } else {
         Impares.push(numeroAtual)
     }
 }
-console.log (Impares)
-console.log (Pares)
+console.log(Impares)
+console.log(Pares)
 
 
 
@@ -264,13 +264,13 @@ console.log (Pares)
 // Crie um novo array onde cada número é multiplicado por 2
 // NÃO use map
 console.log("Crie um novo array onde cada número é multiplicado por 2")
-const numerosQueSeraoMultiplicados = [2,4,6,8];
+const numerosQueSeraoMultiplicados = [2, 4, 6, 8];
 let numeroMultiplicado = []
 
-for (let i = 0; i< numerosQueSeraoMultiplicados.length; i++){
+for (let i = 0; i < numerosQueSeraoMultiplicados.length; i++) {
     let numeroAtual = numerosQueSeraoMultiplicados[i]
 
-    numeroMultiplicado.push(numeroAtual *2 )
+    numeroMultiplicado.push(numeroAtual * 2)
 }
 console.log(numeroMultiplicado)
 
@@ -278,20 +278,20 @@ console.log(numeroMultiplicado)
 // Resultado esperado: [1,2]
 console.log(" Mostre apenas os números repetidos");
 
-const NumerosRepetidos = [1,2,3,2,4,5,1,6];
+const NumerosRepetidos = [1, 2, 3, 2, 4, 5, 1, 6];
 let NumerosSemRepeticao = []
 let NumerosComRepeticao = []
-for (let i = 0; i< NumerosRepetidos.length; i++){
+for (let i = 0; i < NumerosRepetidos.length; i++) {
     let numeroAtual = NumerosRepetidos[i]
 
-    if (NumerosSemRepeticao.includes(numeroAtual)){
+    if (NumerosSemRepeticao.includes(numeroAtual)) {
         NumerosComRepeticao.push(numeroAtual)
     } else {
         NumerosSemRepeticao.push(numeroAtual)
 
     }
 }
-console.log( NumerosComRepeticao)
+console.log(NumerosComRepeticao)
 console.log(NumerosSemRepeticao)
 
 
@@ -299,10 +299,10 @@ console.log(NumerosSemRepeticao)
 
 // Inverta sem usar reverse()
 console.log("Inverta sem usar reverse()")
-const numerosComuns = [1,2,3,4,5];
+const numerosComuns = [1, 2, 3, 4, 5];
 let numerosInvertidos = []
 
-for (let i = numerosComuns.length; i >= 0; i--){
+for (let i = numerosComuns.length; i >= 0; i--) {
     let numeroAtual = numerosComuns[i]
     numerosInvertidos.push(numeroAtual)
 }
@@ -313,16 +313,16 @@ console.log(numerosInvertidos)
 // Resultado esperado: 21
 console.log("Some todos os números da matriz")
 const matriz = [
-  [1,2],
-  [3,4],
-  [5,6]
+    [1, 2],
+    [3, 4],
+    [5, 6]
 ];
-let somaMatrizes= 0
+let somaMatrizes = 0
 
-for (let i = 0; i< matriz.length; i++){
+for (let i = 0; i < matriz.length; i++) {
     let linhaAtual = matriz[i]
 
-    for(let numeroAtual= 0; numeroAtual <linhaAtual.length; numeroAtual++){
+    for (let numeroAtual = 0; numeroAtual < linhaAtual.length; numeroAtual++) {
         somaMatrizes += linhaAtual[numeroAtual]
     }
 }
@@ -339,10 +339,10 @@ console.log(somaMatrizes)
 // 12345
 console.log("Escada Numerica")
 
-const numerosEscada = [1,2,3,4,5,6,7,8,9,10]
+const numerosEscada = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let escada = []
 
-for (let i = 0; i< numerosEscada.length; i++){
+for (let i = 0; i < numerosEscada.length; i++) {
     let numeroAtual = numerosEscada[i]
 
     escada += numeroAtual
@@ -356,14 +356,93 @@ console.log("Descubra qual palavra tem mais letras")
 
 const palavras = ["banana", "uva", "abacaxi", "melancia"];
 let MaiorPalavra = "";
-for (let i = 0; i < palavras.length; i++){
+for (let i = 0; i < palavras.length; i++) {
     let palavraAtual = palavras[i];
-    if (palavraAtual.length > MaiorPalavra.length){
+    if (palavraAtual.length > MaiorPalavra.length) {
         MaiorPalavra = palavraAtual;
     }
 }
 
 console.log(MaiorPalavra);
+
+
+// Conte quantas vezes cada letra aparece 
+console.log("Conte quantas vezes cada letra aparece ")
+const fraseC = "programacao";
+let contador = {}
+for (let i = 0; i < fraseC.length; i++) {
+    let letraAtual = fraseC[i]
+    if (contador[letraAtual]) {
+        contador[letraAtual]++
+    } else {
+        contador[letraAtual] = 1
+    }
+}
+console.log(contador)
+
+
+// Descubra se existe alguém com idade maior que 25
+
+console.log("Descubra se existe alguém com idade maior que 25")
+const usuarios = [
+    { nome: "Carlos", idade: 22 },
+    { nome: "Ana", idade: 30 },
+    { nome: "Pedro", idade: 18 }];
+for (let linha = 0; linha < usuarios.length; linha++) {
+    let linhaAtual = usuarios[linha]
+    if (linhaAtual.idade > 25) {
+        console.log(`O Usuario ${linhaAtual.nome} tem ${linhaAtual.idade} sendo maior de 25`)
+    }
+}
+// Ordene em ordem crescente
+// NÃO use sort()
+console.log("Ordene em ordem crescente")
+const numerosDesordenados = [5, 2, 8, 1];
+
+for (let i = 0; i < numeros.length; i++) {
+    for (let j = 0; j < numeros.length; j++) {
+        if (numeros[j] > numeros[j + 1]) {
+            let temp = numeros[j];
+            
+            numeros[j] = numeros[j + 1];
+            numeros[j + 1] = temp;
+        }
+    }
+}
+
+console.log(numerosDesordenados);
+
+
+
+
+// Mostre apenas os que NÃO repetem
+// Resultado esperado: [1,3,5]
+console.log("Mostre apenas os que NÃO repetem");
+
+const numerosConfusos = [1,2,2,3,4,4,5];
+
+let numerosNaoRepitidos = [];
+
+for (let i = 0; i < numerosConfusos.length; i++) {
+
+    let numeroAtual = numerosConfusos[i];
+
+    let contagem = 0;
+
+    for (let j = 0; j < numerosConfusos.length; j++) {
+        if (numerosConfusos[j] === numeroAtual) {
+            contagem++;
+        }
+    }
+
+    if (contagem === 1) {
+        numerosNaoRepitidos.push(numeroAtual);
+    }
+}
+
+console.log(numerosNaoRepitidos);
+
+
 //-----------------------------------------------------------------------------------
 //-----------------------------Dificuldade: Dificiel---------------------------------
 //-----------------------------------------------------------------------------------
