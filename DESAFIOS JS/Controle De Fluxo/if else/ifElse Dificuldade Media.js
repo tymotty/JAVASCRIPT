@@ -3,17 +3,12 @@ const numero = -5;
 const positivo = numero > 0;
 const negativo = numero < 0;
 const zero = numero === 0;
-if (positivo){
-    console.log(`O ${numero} é positivo`)
-} else if  (negativo) {
-    console.log(`O ${numero} é negativo`)
-
-} else if (zero){
-    console.log(`O ${numero} é zero`)
-}
+if          (positivo) {console.log(`O ${numero} é positivo`)} 
+else if     (negativo) {console.log(`O ${numero} é negativo`)} 
+else if     (zero)     {console.log(`O ${numero} é zero`)}
 
 
-
+     
 
 
 const saque = 270;
