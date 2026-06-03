@@ -11,8 +11,14 @@
 // 60
 
 // Resultado:
-const somarArray =
-
+let numeroArray = [19,29,48]
+const somarArray = (numeroArray) => {
+    for(let i =0; i < numeroArray.length; i++){
+        let numeroAtual = 0
+        i + numeroAtual
+    }
+}
+console.log(somarArray(numeroArray))
 
 
 
