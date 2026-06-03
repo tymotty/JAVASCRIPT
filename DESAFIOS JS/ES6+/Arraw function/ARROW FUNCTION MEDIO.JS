@@ -14,12 +14,9 @@
 // Resultado:
 let valorProduto = 100
 let desconto = 20
-const calcularDesconto = 
-
-
-
-
-
+const calcularDesconto = (valorProduto, desconto) => { let valorProdutoDesconto = valorProduto - desconto
+return valorProdutoDesconto}
+console.log(calcularDesconto(valorProduto, desconto))
 
 // Título: Contar letras
 
@@ -28,7 +25,13 @@ const calcularDesconto =
 // e retorne quantas letras ela possui.
 
 // Resultado:
-//const contarLetras =
+let palavra = "Abacate"
+let letrasTotais = 0
+const contarLetras = (palavra) => {for(let i = 0; i < palavra.length; i++){
+  letrasTotais++
+}}
+contarLetras(palavra)
+console.log (letrasTotais)
 
 
 
@@ -48,6 +51,14 @@ const calcularDesconto =
 // Resultado:
 //const verificarParidade =
 
+const verificarParidade = (numero) => {
+    if(numero % 2 === 0){
+        return "Par"
+    }
+
+    return "Ímpar"
+}
+
 
 
 
@@ -61,7 +72,15 @@ const calcularDesconto =
 // dois números e retorne o maior deles.
 
 // Resultado:
-//const maiorNumero =
+
+
+const maiorNumero = (numero1, numero2) => {
+    if(numero1 > numero2){
+        return numero1
+    }
+
+    return numero2
+}
 
 
 
@@ -78,4 +97,9 @@ const calcularDesconto =
 // Retorne a área do retângulo.
 
 // Resultado:
-//const calcularArea =
+
+
+
+const calcularArea = (largura, altura) => {
+    return largura * altura
+}
