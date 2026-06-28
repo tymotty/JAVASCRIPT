@@ -20,7 +20,7 @@ const somarArray = (numeroArray) => {
 }
 console.log(somarArray(numeroArray))
 
-
+ 
 
 
 
@@ -54,7 +54,7 @@ console.log(somarArray(numeroArray))
 
 // O que fazer no desafio:
 // Crie uma Arrow Function que receba uma string
-// e retorne a quantidade de vogais.
+// e retorne a quantidade de vogais. 
 //
 // Exemplo:
 // "javascript"
