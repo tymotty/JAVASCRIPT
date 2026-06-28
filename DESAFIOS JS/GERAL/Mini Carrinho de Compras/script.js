@@ -1,9 +1,7 @@
 /*-------------------------------------------------------------------------------- */
-let carrinho = document.querySelector("#carrinho")
-const buttonProduto = document.querySelectorAll(".AdicionarProduto")
-const quantidadeDeProduto = document.querySelectorAll(".quantidade")
-
-
+let painelCarrinho = document.querySelector("#carrinho");
+const buttonProduto = document.querySelectorAll(".AdicionarProduto");
+const quantidadeDeProduto = document.querySelectorAll(".quantidade");
 
 /*-----------------------------------Eventos-------------------------------------- */
 /*forEach adiciona o mesmo evento a todos os botoes, no caso o click */
@@ -38,7 +36,16 @@ function verificacaoProduto(event, carrinho) {
   console.log(carrinho)
 }
 
+/*------------------------------------Carrinho-------------------------------------*/
+/*Apenas o efeito do carrinho indo e voltando*/
 
+const abrir = document.querySelector("#abrirCarrinho")
+const conteudo = document.querySelector("#conteudo");
+
+abrir.addEventListener("click", () => {
+    painelCarrinho.classList.toggle("ativo");
+    conteudo.classList.toggle("carrinhoAberto");
+});
 
 /*------------------------------------Estoque-------------------------------------*/
 function atualizarHTML(id, quantidade){
@@ -51,8 +58,7 @@ function atualizarHTML(id, quantidade){
 
 }
 
-carrinho = [ ]
-
+let carrinho = []
 const estoque = [
   { id: "1", nome: "Notebook Dell Inspiron", preco: 3499.99,quantidade: 2 },
   { id: "2", nome: "Mouse Gamer RGB",        preco: 149.90, quantidade: 7 },
