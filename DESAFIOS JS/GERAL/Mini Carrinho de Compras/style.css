@@ -14,7 +14,7 @@ header{
     justify-content:space-between;
     align-items:center;
 
-    padding:20px 40px;
+    padding:15px 10px;
     margin-bottom:20px;
 
     background:white;
@@ -42,6 +42,14 @@ nav a{
 
 nav a:hover{
     color:var(--CorPrincipal);
+}
+
+.logo h1{
+    font-size:2rem;
+}
+
+.logo p{
+    font-size:15px;
 }
 
 @media(max-width:768px){
@@ -89,6 +97,9 @@ body.carrinhoAberto{
 
 }
 
+body.carrinhoAberto{
+    margin-right: 340px;
+}
 #carrinho.ativo{
     right:0;
 }
@@ -156,7 +167,6 @@ body.carrinhoAberto{
     flex-wrap: wrap;
     justify-content: center;
     
-    width: 100%;
     max-width: 1110px;
 
     margin: auto;
@@ -165,11 +175,11 @@ body.carrinhoAberto{
 
 
     gap: 20px;
-    background-color: var(--CorContainer);
 }
 
 .blockProduto {
-    width: 350px;
+    width:100%;
+    max-width:350px;
     height: var(--alturaBlock);
     
     border: 1px solid var(--CorContainer);
@@ -179,7 +189,7 @@ body.carrinhoAberto{
     text-align: center;
     background-color: var(--CorProdutos);
     
-    flex: 1 1 300px;
+    flex: 1 1 280px;
 }
 
 h1{
@@ -218,6 +228,20 @@ button:hover{
   transform: translateY(-1px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   background-color: var(--CorPrincipalHover);
+}
+
+    .blockProduto{
+        max-width:100%;
+    }
+}
+@media (max-width:480px){
+    .blockProduto{
+        flex:1 1 100%;
+    }
+
+    img{
+        height:180px;
+    }
 }
 
 /*----------------------Sobre Nós----------------------*/
