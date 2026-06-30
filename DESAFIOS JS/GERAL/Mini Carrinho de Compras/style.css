@@ -219,3 +219,90 @@ button:hover{
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   background-color: var(--CorPrincipalHover);
 }
+
+/*----------------------Sobre Nós----------------------*/
+
+.sobre{
+    max-width:1000px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.sobre h1{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.sobre section{
+    background:white;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.sobre h2{
+    color:var(--CorPrincipal);
+}
+
+.sobre p{
+    font-size:16px;
+    line-height:1.6;
+}
+
+.sobre ul{
+    padding-left:20px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#f3f4f6;
+}
+
+/*----------------------Animicao de avaliacao----------------------*/
+.estatisticas{
+
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+
+    margin:50px 0;
+
+}
+
+.cardNumero{
+
+    width:220px;
+
+    padding:25px;
+
+    text-align:center;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+
+}
+
+.cardNumero h2{
+
+    color:var(--CorPrincipal);
+
+    font-size:42px;
+
+    margin:0;
+
+}
+
+.cardNumero p{
+
+    font-size:16px;
+
+}
+
+
+}
