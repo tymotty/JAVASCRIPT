@@ -16,24 +16,26 @@ buttonProduto.forEach(botao => {
 
 /*------------------------------------Function-------------------------------------*/
 
-function verificacaoQuantida(event){
+function verificacaoQuantida(event) {
   const quantity = event.target.dataset.quantidade
 
   const produtoQuantidade = estoque.find(item => item.quantidade === quantidade)
 }
 
 
-function verificacaoProduto(event, carrinho) {
+function verificacaoProduto(event) {
   const id = event.target.dataset.id
   /*dataset.id: Ta pegando o valor q foi clicado, qual id no caso */
-  
+
   const produto = estoque.find(item => item.id === id)
   /*Aqui o Find esta fazendo um papel de pesquisa, ele esta procurando o produto no estoque, com o nome de item, fazendo com q o primeiro produto igual ao id apareca */
-  carrinho.push(produto)
-  
-  atualizarHTML()
-  
-  console.log(carrinho)
+  console.log(itensCarrinho);
+  console.log(typeof itensCarrinho);
+  itensCarrinho.push(produto);
+  atualizarCarrinho();
+  //atualizarHTML()
+
+  console.log(itensCarrinho);
 }
 
 /*------------------------------------Carrinho-------------------------------------*/
@@ -43,30 +45,68 @@ const abrir = document.querySelector("#abrirCarrinho")
 const conteudo = document.querySelector("#conteudo");
 
 abrir.addEventListener("click", () => {
-    painelCarrinho.classList.toggle("ativo");
-    conteudo.classList.toggle("carrinhoAberto");
+  painelCarrinho.classList.toggle("ativo");
+  conteudo.classList.toggle("carrinhoAberto");
 });
 
 /*------------------------------------Estoque-------------------------------------*/
-function atualizarHTML(id, quantidade){
+function atualizarHTML(id, quantidade) {
 
   const elemento = document.querySelector(`[data-id="${id}"].quantidade`)
 
-  if(elemento){
+  if (elemento) {
     elemento.textContent = quantidade
   }
 
 }
+function atualizarCarrinho() {
+  const lista = document.querySelector("#listaCarrinho");
+  lista.innerHTML = "";
+  let total = 0;
 
-let carrinho = []
+  itensCarrinho.forEach(produto => {
+    lista.innerHTML += `
+      <div class="itemCarrinho">
+        <p>${produto.nome}</p>
+          <span>R$ ${produto.preco.toFixed(2)}</span><br>
+
+          <button class="removerProduto" data-id="${produto.id}">
+              Remover
+          </button>
+      </div>
+`;
+
+    total += produto.preco;
+
+  });
+
+  document.querySelector("#totalCarrinho").textContent =
+    `Total: R$ ${total.toFixed(2)}`;
+  const botoesRemover = document.querySelectorAll(".removerProduto");
+
+  botoesRemover.forEach(botao => {
+    botao.addEventListener("click", removerProduto);
+});
+}
+function removerProduto(event){
+    const id = event.target.dataset.id;
+    const indice = itensCarrinho.findIndex(produto => produto.id === id);
+
+    if(indice !== -1){
+        itensCarrinho.splice(indice, 1);
+    }
+
+    atualizarCarrinho();
+}
+let itensCarrinho = [];
 const estoque = [
-  { id: "1", nome: "Notebook Dell Inspiron", preco: 3499.99,quantidade: 2 },
-  { id: "2", nome: "Mouse Gamer RGB",        preco: 149.90, quantidade: 7 },
-  { id: "3", nome: "Teclado Mecânico",       preco: 299.90, quantidade: 9 },
-  { id: "4", nome: "Monitor 24 Full HD",     preco: 799.00, quantidade: 3 },
-  { id: "5", nome: "Headset Gamer",          preco: 249.90, quantidade: 5 },
-  { id: "6", nome: "Mousepad Gamer",         preco: 59.00 , quantidade: 11},
-  { id: "7", nome: "SSD 1TB NVMe",           preco: 449.90, quantidade: 1 },
-  { id: "8", nome: "Cadeira Gamer",          preco: 599.00, quantidade: 3 },
-  { id: "9", nome: "Notebook Delta 16Gb Ram",preco: 3999.00,quantidade: 1 }
+  { id: "1", nome: "Notebook Dell Inspiron", preco: 3499.99, quantidade: 2 },
+  { id: "2", nome: "Mouse Gamer RGB", preco: 149.90, quantidade: 7 },
+  { id: "3", nome: "Teclado Mecânico", preco: 299.90, quantidade: 9 },
+  { id: "4", nome: "Monitor 24 Full HD", preco: 799.00, quantidade: 3 },
+  { id: "5", nome: "Headset Gamer", preco: 249.90, quantidade: 5 },
+  { id: "6", nome: "Mousepad Gamer", preco: 59.00, quantidade: 11 },
+  { id: "7", nome: "SSD 1TB NVMe", preco: 449.90, quantidade: 1 },
+  { id: "8", nome: "Cadeira Gamer", preco: 599.00, quantidade: 3 },
+  { id: "9", nome: "Notebook Delta 16Gb Ram", preco: 3999.00, quantidade: 1 }
 ]
