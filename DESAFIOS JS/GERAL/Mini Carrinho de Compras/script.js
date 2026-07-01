@@ -46,7 +46,10 @@ const conteudo = document.querySelector("#conteudo");
 
 abrir.addEventListener("click", () => {
   painelCarrinho.classList.toggle("ativo");
-  conteudo.classList.toggle("carrinhoAberto");
+
+  if(window.innerWidth > 480){
+        conteudo.classList.toggle("carrinhoAberto");
+  }
 });
 
 /*------------------------------------Estoque-------------------------------------*/

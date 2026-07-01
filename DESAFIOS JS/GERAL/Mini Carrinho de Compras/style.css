@@ -150,14 +150,17 @@ body.carrinhoAberto{
     }
 }
 @media(max-width:480px){
-
     #carrinho{
-        width: 180px;
-        right: -220px;
+        width:80%;
+        right:-80%;
     }
 
-    body.carrinhoAberto{
-        margin-right: 180px;
+    #carrinho.ativo{
+        right:0;
+    }
+
+    #conteudo{
+        margin-right:0;
     }
 }
 
