@@ -269,6 +269,44 @@ button:hover{
 }
 
 /*---------------------------------------------------------------------------------*/
+/*----------------------------------Pagina "Catalago"-----------------------------*/
+/*---------------------------------------------------------------------------------*/
+.catalogo{
+    max-width:1200px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.catalogo h1{
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.categorias{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+.categoria{
+    width:280px;
+    padding:25px;
+
+    background:white;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+
+    text-align:center;
+    transition:.3s;
+}
+
+.categoria:hover{
+    transform:translateY(-8px);
+}
+
+/*---------------------------------------------------------------------------------*/
 /*----------------------------------Pagina "Sobre Nos"-----------------------------*/
 /*---------------------------------------------------------------------------------*/
 
