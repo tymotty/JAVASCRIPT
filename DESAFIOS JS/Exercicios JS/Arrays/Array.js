@@ -26,4 +26,83 @@ console.log(temRoxo)
 const listaA = [1, 2, 3];
 const listaB = [4, 5, 6];
 
-const combinada = []
+const combinada = [...listaA,...listaB];
+const copiaA= [...listaA,99 ]
+
+console.log(copiaA)
+console.log(combinada)
+
+
+
+
+const tarefas = ["Estudar", "Malhar", "Ler", "Cozinhar"];
+
+tarefas.push("Descansar");
+const posicaoLer = tarefas.indexOf("Ler");
+
+function RemoverMalhar (tarefas){
+    const posicaoMalhar = tarefas.indexOf("Malhar");
+    const RemoverMalhar = tarefas.splice(posicaoMalhar,1);
+};
+RemoverMalhar(tarefas);
+const estaCorrer = tarefas.includes("Correr");
+
+const doisPrimeiros = tarefas.slice(0,2);
+
+console.log(tarefas)
+console.log(posicaoLer)
+console.log(tarefas)
+console.log(estaCorrer)
+console.log(doisPrimeiros)
+
+
+const filaAtendimento = ["Carlos", "Beatriz"];
+
+filaAtendimento.unshift("Ana")
+
+const proximoAtendido = filaAtendimento.shift()
+
+console.log(proximoAtendido)
+console.log(filaAtendimento)
+
+
+
+
+const ingredientes = ["farinha", "ovo", "leite"];
+const extras = ["açúcar", "fermento"];
+
+const receitaCompleta = ingredientes.concat(extras)
+
+
+const receitaCompletaString = receitaCompleta.join(" - ")
+ 
+
+console.log(receitaCompleta)
+console.log(receitaCompletaString)
+
+const number = [40, 5, 100, 25, 1];
+
+number.sort((a,b) => b-a)
+console.log(number)
+
+
+
+const biblioteca = {
+  nome: "Biblioteca Central",
+  livros: [
+    { titulo: "JS Avançado", ano: 2020, disponivel: true },
+    { titulo: "Clean Code", ano: 2018, disponivel: false },
+    { titulo: "SQL na Prática", ano: 2022, disponivel: true }
+  ]
+};
+
+
+const namebiblio = {biblioteca: {nome}}
+
+
+
+
+
+
+
+
