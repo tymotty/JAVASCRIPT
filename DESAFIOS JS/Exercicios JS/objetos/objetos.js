@@ -152,3 +152,24 @@ const funcionarios = {
 const {name,...outrosDados} = funcionarios
 console.log(name)
 console.log(outrosDados)
+
+
+
+const convidados = ["Julia", "Rafael", "Camila", "Diego"];
+
+
+convidados.push("Fernanda")
+
+console.log (convidados.indexOf("Camila"))
+
+const posicaoRafael = convidados.indexOf("Rafael")
+const removerRafel = convidados.splice(posicaoRafael, 1)
+
+const brunoLista = convidados.includes("Bruno")
+console.log(brunoLista)
+
+console.log(convidados)
+
+const ultimosDois = convidados.slice(-2)
+
+console.log (ultimosDois)
