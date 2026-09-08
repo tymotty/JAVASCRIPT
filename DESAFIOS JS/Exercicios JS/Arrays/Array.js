@@ -97,7 +97,6 @@ const biblioteca = {
 };
 
 
-const namebiblio = {biblioteca: {nome}}
 
 
 
@@ -105,4 +104,32 @@ const namebiblio = {biblioteca: {nome}}
 
 
 
+
+const times = ["Grêmio", "Inter", "Palmeiras", "Flamengo"];
+
+times.unshift("Corinthians")
+
+times.push("Santos")
+
+console.log(times.indexOf("Palmeiras"))
+
+
+const posicaoInter = times.indexOf("Inter")
+const removerInter = times.splice(posicaoInter,1)
+
+console.log(times)
+
+console.log(`Vasco Esta na lista:${times.includes("Vasco")}`)
+
+const timesSerieA = ["Botafogo", "Fluminense"]
+
+const todososTimes = times.concat(timesSerieA)
+
+const todososTimesString = todososTimes.join(" | ")
+
+todososTimesString.sort()
+
+console.log(todososTimes)
+console.log(times)
+console.log(timesSerieA)
 
