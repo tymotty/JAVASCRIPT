@@ -125,11 +125,43 @@ const timesSerieA = ["Botafogo", "Fluminense"]
 
 const todososTimes = times.concat(timesSerieA)
 
-const todososTimesString = todososTimes.join(" | ")
-
-todososTimesString.sort()
 
 console.log(todososTimes)
 console.log(times)
 console.log(timesSerieA)
+
+
+
+
+
+
+const playlist = ["Rock", "Pop", "Jazz", "Eletrônica"];
+
+
+playlist.unshift("Sertanejo")
+
+playlist.push("Clássica")
+
+console.log(playlist.indexOf("Jazz"))
+
+const posicaoPop = playlist.indexOf("Pop")
+const removePop = playlist.splice(posicaoPop,1)
+
+console.log(playlist.includes("Funk"))
+
+const playlist2 = ["Blues", "Reggae"]
+const playlistCompleta = playlist.concat(playlist2)
+console.log(playlistCompleta);
+
+
+
+const playlistOrdenadaString = playlistOrdenada.join(" / ");
+
+let ultimos3 = playlistCompleta.slice(-3) /*coloquei let pensando que caso fosse colocar mais musica entao o resultado ia mudar*/
+
+console.log(playlist)
+console.log(playlistCompleta)
+console.log(playlistOrdenada)
+console.log(playlistOrdenadaString)
+console.log(ultimos3)
 
