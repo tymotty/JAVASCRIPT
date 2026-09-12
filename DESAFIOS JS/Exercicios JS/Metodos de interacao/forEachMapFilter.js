@@ -63,3 +63,30 @@ respostas.forEach((item) =>{
     }
 })
 console.log(totalSim)
+
+
+//07
+const pedidos = [
+  { cliente: "Marcos", valor: 80 },
+  { cliente: "Julia", valor: 45 },
+  { cliente: "Pedro", valor: 200 }
+];
+//07-1
+pedidos.forEach(({cliente,valor}) => {
+    if (valor > 50){
+        console.log(`${cliente}: R$${valor}`)}
+})
+
+//07-2
+let totalVendas = 0
+pedidos.forEach(({valor}) => {
+    totalVendas = totalVendas + valor
+})
+console.log (totalVendas)
+
+//07-3
+pedidos.forEach((item) => {
+    item.valor = item.valor + 5
+})
+
+console.log(pedidos)
