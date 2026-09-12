@@ -153,6 +153,10 @@ const playlist2 = ["Blues", "Reggae"]
 const playlistCompleta = playlist.concat(playlist2)
 console.log(playlistCompleta);
 
+//acido salicyic 
+//vitamina c
+//niacinamida
+//solar
 
 
 const playlistOrdenadaString = playlistOrdenada.join(" / ");
