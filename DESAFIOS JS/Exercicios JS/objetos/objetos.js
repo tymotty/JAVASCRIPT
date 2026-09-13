@@ -110,21 +110,11 @@ console.log(cidade)
 
 
 
-const produtos = [
-  { nome: "Mouse", preco: 50 },
-  { nome: "Teclado", preco: 120 }
-];
-
-
-const {preco} = produtos[0]
 
 
 
-function mostrarProduto({nome,preco}) {
-  console.log(`${nome} custa ${preco}`)
-};
 
-mostrarProduto(produtos[0])
+
 
 
 
@@ -166,10 +156,6 @@ const posicaoRafael = convidados.indexOf("Rafael")
 const removerRafel = convidados.splice(posicaoRafael, 1)
 
 const brunoLista = convidados.includes("Bruno")
-console.log(brunoLista)
 
-console.log(convidados)
 
 const ultimosDois = convidados.slice(-2)
-
-console.log (ultimosDois)

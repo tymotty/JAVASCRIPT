@@ -29,17 +29,7 @@ console.log(somaTotal)
 
 
 //04
-const produtos = [
-  { nome: "Caderno", preco: 15 },
-  { nome: "Caneta", preco: 3 },
-  { nome: "Mochila", preco: 120 },
-  { nome: "Lápis", preco: 2 }
-];
-produtos.forEach (({nome, preco}) => {
-    if (preco > 10) {
-        console.log(`${nome}: R$${preco}`)
-    }
-})
+
 
 
 //05
@@ -90,3 +80,61 @@ pedidos.forEach((item) => {
 })
 
 console.log(pedidos)
+
+
+
+
+console.log("|--------------------------------MAP--------------------------------|")
+
+
+//01
+const precos = [100, 200, 300];
+
+const precoComDesconto = precos.map(item=>item * 0.9)
+console.log(precoComDesconto)
+
+
+//02
+
+const alunos = [
+  { nome: "Bianca", nota: 8 },
+  { nome: "Diego", nota: 6 },
+  { nome: "Elisa", nota: 9 }
+];
+
+const nomesAlunos = alunos.map((aluno)=> 
+   aluno.nome
+)
+console.log (nomesAlunos)
+
+
+
+
+//03
+const produtos = [
+  { nome: "Mouse", preco: 50 },
+  { nome: "Teclado", preco: 120 },
+  { nome: "Monitor", preco: 800 }
+];
+
+
+const produtosComImposto = produtos.map((item)=>{
+    return {...item, precoComImposto: (item.preco*10)/100 + item.preco}
+});
+console.log(produtosComImposto)
+
+
+
+
+//04
+const funcionarios = [
+  { nome: "Rita", salario: 3000 },
+  { nome: "Tiago", salario: 5500 },
+  { nome: "Nina", salario: 2000 }
+];
+
+const funcionariosCategorizados = funcionarios.map((item)=>{
+    return {...item, categoria: item.salario>4000? "Alto": "Padrão"}
+})
+
+console.log(funcionariosCategorizados)
