@@ -138,3 +138,32 @@ const funcionariosCategorizados = funcionarios.map((item)=>{
 })
 
 console.log(funcionariosCategorizados)
+
+//05
+const times = [
+  { nome: "Grêmio", pontos: 45 },
+  { nome: "Inter", pontos: 38 },
+  { nome: "Palmeiras", pontos: 60 }
+];
+
+//05-1
+const nomesTimes = times.map ((item)=> {
+    return item.nome
+})
+
+console.log(nomesTimes)
+//05-2
+const timesComBonus = times.map ((item) => {
+    return {...item, pontosComBonus: item.pontos +5 }
+})
+console.log(timesComBonus)
+
+//05-3
+const timesClassificados = times.map(time => ({
+  ...time,
+  situacao: time.pontos > 40 ? "Classificado" : "Eliminado"
+}));
+
+//|--------------------------------Filter--------------------------------|//
+console.log("//|----------------------------Filter----------------------------|//")
+const idades = [15, 22, 8, 34, 17, 40];
