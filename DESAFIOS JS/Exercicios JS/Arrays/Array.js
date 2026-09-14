@@ -153,13 +153,8 @@ const playlist2 = ["Blues", "Reggae"]
 const playlistCompleta = playlist.concat(playlist2)
 console.log(playlistCompleta);
 
-//acido salicyic 
-//vitamina c
-//niacinamida
-//solar
 
 
-const playlistOrdenadaString = playlistOrdenada.join(" / ");
 
 let ultimos3 = playlistCompleta.slice(-3) /*coloquei let pensando que caso fosse colocar mais musica entao o resultado ia mudar*/
 

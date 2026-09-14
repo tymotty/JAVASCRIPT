@@ -96,13 +96,13 @@ console.log(precoComDesconto)
 
 //02
 
-const alunos = [
+const al= [
   { nome: "Bianca", nota: 8 },
   { nome: "Diego", nota: 6 },
   { nome: "Elisa", nota: 9 }
 ];
 
-const nomesAlunos = alunos.map((aluno)=> 
+const nomesAlunos = al.map((aluno)=> 
    aluno.nome
 )
 console.log (nomesAlunos)
@@ -111,14 +111,14 @@ console.log (nomesAlunos)
 
 
 //03
-const produtos = [
+const pro = [
   { nome: "Mouse", preco: 50 },
   { nome: "Teclado", preco: 120 },
   { nome: "Monitor", preco: 800 }
 ];
 
 
-const produtosComImposto = produtos.map((item)=>{
+const produtosComImposto = pro.map((item)=>{
     return {...item, precoComImposto: (item.preco*10)/100 + item.preco}
 });
 console.log(produtosComImposto)
@@ -166,4 +166,185 @@ const timesClassificados = times.map(time => ({
 
 //|--------------------------------Filter--------------------------------|//
 console.log("//|----------------------------Filter----------------------------|//")
-const idades = [15, 22, 8, 34, 17, 40];
+//01
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8];
+const pares = numeros.filter((item) => {
+    return item % 2 === 0 
+})
+
+//02
+const n = ["Ana", "Carlos", "João", "Amanda", "Pedro"];
+const nomesGrandes = n.filter((item)=>{
+    return item.length > 4
+})
+
+//03
+const idades = [12, 18, 25, 14, 30, 16, 21];
+const maioresDeIdade = idades.filter((item) =>{
+    return item >= 18
+})
+
+//04
+const pessoas = [
+    { nome: "Ana", idade: 17 },
+    { nome: "Carlos", idade: 22 },
+    { nome: "João", idade: 15 },
+    { nome: "Amanda", idade: 30 },
+    { nome: "Pedro", idade: 19 }
+];
+
+const adultos = pessoas.filter((item) => {
+    return item.idade >= 18
+})
+console.log(adultos)
+
+//05
+const produto = [
+    { nome: "Teclado", preco: 150 },
+    { nome: "Mouse", preco: 80 },
+    { nome: "Monitor", preco: 900 },
+    { nome: "Headset", preco: 250 },
+    { nome: "Webcam", preco: 120 }
+];
+const produtosCaros = produto.filter((item)=>{
+    return item.preco > 200;
+})
+
+//06
+const produt = [
+    { nome: "Teclado", preco: 150, estoque: 10 },
+    { nome: "Mouse", preco: 80, estoque: 0 },
+    { nome: "Monitor", preco: 900, estoque: 5 },
+    { nome: "Headset", preco: 250, estoque: 0 },
+    { nome: "Webcam", preco: 120, estoque: 8 }
+];
+
+const disponiveis = produt.filter((item) => {
+    return item.estoque > 0 
+})
+
+//07
+const prod = [
+    { nome: "Teclado", preco: 150, estoque: 10 },
+    { nome: "Mouse", preco: 80, estoque: 0 },
+    { nome: "Monitor", preco: 900, estoque: 5 },
+    { nome: "Headset", preco: 250, estoque: 0 },
+    { nome: "Webcam", preco: 120, estoque: 8 }
+];
+ const produtosDisponiveisCaros = prod.filter ((item) => {
+    return item.preco >100 &&  
+    item.estoque > 0
+ })
+ console.log(produtosDisponiveisCaros)
+
+ //08
+ const alunos = [
+    { nome: "Ana", nota: 8, faltas: 2 },
+    { nome: "Carlos", nota: 5, faltas: 1 },
+    { nome: "João", nota: 9, faltas: 6 },
+    { nome: "Amanda", nota: 7, faltas: 3 },
+    { nome: "Pedro", nota: 4, faltas: 0 }
+]; 
+const aprovados = alunos.filter ((item) => {
+    return item.nota >= 7 
+    &&
+    item.faltas < 5
+})
+
+//09
+const nomes = [
+    "Ana",
+    "Carlos",
+    "Amanda",
+    "João",
+    "Arthur",
+    "Pedro"
+];
+const nomesComA = nomes.filter ((item) =>{
+    return item.toLocaleLowerCase().includes("a")
+})
+console.log(nomesComA)
+
+//10
+const usuario = [
+    { nome: "Ana", ativo: true, idade: 17 },
+    { nome: "Carlos", ativo: false, idade: 25 },
+    { nome: "Amanda", ativo: true, idade: 22 },
+    { nome: "João", ativo: true, idade: 15 },
+    { nome: "Pedro", ativo: false, idade: 30 }
+];
+
+const usuariosPermitidos = usuario.filter((item)=> {
+    return item.idade >= 18 &&
+    item.ativo 
+})
+console.log(usuariosPermitidos)
+
+//11
+const produ = [
+    { nome: "Teclado", categoria: "periferico", preco: 150 },
+    { nome: "Monitor", categoria: "monitor", preco: 900 },
+    { nome: "Mouse", categoria: "periferico", preco: 80 },
+    { nome: "Notebook", categoria: "computador", preco: 3500 },
+    { nome: "Webcam", categoria: "periferico", preco: 120 }
+];
+const produtosSelecionados = produ.filter((item) =>{
+    return item.categoria === "periferico" || item.categoria === "monitor"
+})
+
+//12
+const produtos = [
+    { nome: "Teclado", categoria: "periferico", preco: 150, estoque: 10 },
+    { nome: "Mouse", categoria: "periferico", preco: 80, estoque: 0 },
+    { nome: "Monitor", categoria: "monitor", preco: 900, estoque: 5 },
+    { nome: "Notebook", categoria: "computador", preco: 3500, estoque: 2 },
+    { nome: "Webcam", categoria: "periferico", preco: 120, estoque: 8 },
+    { nome: "Cadeira", categoria: "moveis", preco: 700, estoque: 3 }
+];
+
+
+const produtosParaPromocao = produtos.filter(({categoria,preco,estoque})=> {
+    return(
+        //Condicao A
+        (categoria === "periferico" && preco>100 && estoque> 0) 
+        ||
+        //Condicao B
+        (categoria === "monitor" && estoque> 0)
+    );
+})
+console.log(produtosParaPromocao)
+//13
+const usuari = [
+    { nome: "Ana", idade: 22, cidade: "Curitiba", ativo: true },
+    { nome: "Carlos", idade: 17, cidade: "Curitiba", ativo: true },
+    { nome: "João", idade: 30, cidade: "São Paulo", ativo: false },
+    { nome: "Amanda", idade: 25, cidade: "Curitiba", ativo: false },
+    { nome: "Pedro", idade: 19, cidade: "São Paulo", ativo: true },
+    { nome: "Lucas", idade: 28, cidade: "Curitiba", ativo: true }
+];
+
+const usuariosSelecionados = usuari.filter (({idade,cidade,ativo}) =>{
+    return(
+        //Condicao A
+        (idade >=18 && ativo && cidade ==="Curitiba") 
+        ||
+        //Condicao B
+        (idade >=25 && ativo && cidade ==="São Paulo")
+    );
+});
+console.log(usuariosSelecionados)
+
+
+//14
+const usuarios = [
+    { nome: "Ana Silva", email: "ana@gmail.com", ativo: true },
+    { nome: "Carlos Souza", email: "carlos@yahoo.com", ativo: true },
+    { nome: "Amanda Lima", email: "amanda@gmail.com", ativo: false },
+    { nome: "João Santos", email: "joao@gmail.com", ativo: true },
+    { nome: "Pedro Alves", email: "pedro@hotmail.com", ativo: false },
+    { nome: "Lucas Rocha", email: "lucas@yahoo.com", ativo: true }
+];
+const usuariosGmailAtivos = usuarios.filter((item) => {
+    return item.email.endsWith("@gmail.com")  && item.ativo
+})
+console.log(usuariosGmailAtivos)
