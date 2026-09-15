@@ -1,5 +1,4 @@
-//--------------------------------ForEach
-
+console.log("|-----------------------------ForEach-------------------------------|")
 
 //01
 const compras = ["Leite", "Pão", "Ovo"];
@@ -127,13 +126,13 @@ console.log(produtosComImposto)
 
 
 //04
-const funcionarios = [
+const funcionario = [
   { nome: "Rita", salario: 3000 },
   { nome: "Tiago", salario: 5500 },
   { nome: "Nina", salario: 2000 }
 ];
 
-const funcionariosCategorizados = funcionarios.map((item)=>{
+const funcionariosCategorizados = funcionario.map((item)=>{
     return {...item, categoria: item.salario>4000? "Alto": "Padrão"}
 })
 
@@ -293,7 +292,7 @@ const produtosSelecionados = produ.filter((item) =>{
 })
 
 //12
-const produtos = [
+const p = [
     { nome: "Teclado", categoria: "periferico", preco: 150, estoque: 10 },
     { nome: "Mouse", categoria: "periferico", preco: 80, estoque: 0 },
     { nome: "Monitor", categoria: "monitor", preco: 900, estoque: 5 },
@@ -303,7 +302,7 @@ const produtos = [
 ];
 
 
-const produtosParaPromocao = produtos.filter(({categoria,preco,estoque})=> {
+const produtosParaPromocao = p.filter(({categoria,preco,estoque})=> {
     return(
         //Condicao A
         (categoria === "periferico" && preco>100 && estoque> 0) 
@@ -336,7 +335,7 @@ console.log(usuariosSelecionados)
 
 
 //14
-const usuarios = [
+const usuar = [
     { nome: "Ana Silva", email: "ana@gmail.com", ativo: true },
     { nome: "Carlos Souza", email: "carlos@yahoo.com", ativo: true },
     { nome: "Amanda Lima", email: "amanda@gmail.com", ativo: false },
@@ -344,7 +343,178 @@ const usuarios = [
     { nome: "Pedro Alves", email: "pedro@hotmail.com", ativo: false },
     { nome: "Lucas Rocha", email: "lucas@yahoo.com", ativo: true }
 ];
-const usuariosGmailAtivos = usuarios.filter((item) => {
+const usuariosGmailAtivos = usuar.filter((item) => {
     return item.email.endsWith("@gmail.com")  && item.ativo
 })
 console.log(usuariosGmailAtivos)
+
+//15
+const filmes = [
+    { titulo: "Interestelar", genero: "ficcao", nota: 9 },
+    { titulo: "O Poderoso Chefão", genero: "drama", nota: 9 },
+    { titulo: "Matrix", genero: "ficcao", nota: 8 },
+    { titulo: "O Exorcista", genero: "terror", nota: 8 },
+    { titulo: "A Origem", genero: "ficcao", nota: 9 }
+];
+const filmesFiccao = filmes.filter ((item) => {
+    return item.genero ==="ficcao"
+})
+
+const filmesComNome = filmesFiccao.filter((item) => {
+    return item.titulo.toLocaleLowerCase().includes("a")
+})
+console.log(filmesComNome)
+
+//16
+const usua = [
+    {
+        nome: "Ana",
+        idade: 22,
+        tecnologias: ["JavaScript", "HTML", "CSS"]
+    },
+    {
+        nome: "Carlos",
+        idade: 25,
+        tecnologias: ["Python", "SQL"]
+    },
+    {
+        nome: "Amanda",
+        idade: 20,
+        tecnologias: ["JavaScript", "React", "Node.js"]
+    },
+    {
+        nome: "João",
+        idade: 30,
+        tecnologias: ["Java", "Spring", "SQL"]
+    },
+    {
+        nome: "Pedro",
+        idade: 19,
+        tecnologias: ["HTML", "CSS"]
+    },
+    {
+        nome: "Lucas",
+        idade: 27,
+        tecnologias: ["JavaScript", "TypeScript", "React"]
+    }
+];
+
+const usuariosJavaScript = usua.filter(({tecnologias})=> {
+    return tecnologias.includes("JavaScript")
+})
+console.log(usuariosJavaScript)
+
+//17
+const desenvolvedoresJS = usua.filter(({tecnologias,idade}) =>{
+    return tecnologias.includes("JavaScript") && idade >= 20
+})
+console.log(desenvolvedoresJS)
+
+//18
+const pr = [
+    { nome: "Teclado", preco: 150, categoria: "periferico", estoque: 10 },
+    { nome: "Mouse", preco: 80, categoria: "periferico", estoque: 0 },
+    { nome: "Monitor", preco: 900, categoria: "monitor", estoque: 5 },
+    { nome: "Webcam", preco: 120, categoria: "periferico", estoque: 8 },
+    { nome: "Notebook", preco: 3500, categoria: "computador", estoque: 2 },
+    { nome: "Headset", preco: 250, categoria: "periferico", estoque: 0 }
+];
+const produtosDisponiveis = pr.filter ((item)=>{
+    return item.estoque >0
+})
+const perifericos = produtosDisponiveis.filter((item)=>{
+    return item.categoria === "periferico"
+})
+
+//19
+const funcionarios = [
+    {
+        nome: "Ana",
+        departamento: "TI",
+        salario: 5000,
+        ativo: true
+    },
+    {
+        nome: "Carlos",
+        departamento: "RH",
+        salario: 4000,
+        ativo: true
+    },
+    {
+        nome: "Amanda",
+        departamento: "TI",
+        salario: 7000,
+        ativo: false
+    },
+    {
+        nome: "João",
+        departamento: "TI",
+        salario: 6000,
+        ativo: true
+    },
+    {
+        nome: "Pedro",
+        departamento: "RH",
+        salario: 5500,
+        ativo: false
+    },
+    {
+        nome: "Lucas",
+        departamento: "TI",
+        salario: 4500,
+        ativo: true
+    }
+];
+
+const funcionariosAtivos = funcionarios.filter((item) => {
+    return item.ativo
+})
+const funcionariosTI = funcionariosAtivos.filter((item) => {
+    return item.departamento ==="TI" 
+})
+console.log(funcionariosTI)
+
+//20
+const produtosEstoqueDisponivel = pr.filter((item) => {
+    return item.estoque > 0
+})
+const produtosDisponivelNome = produtosEstoqueDisponivel.map((item) =>{
+ return item.nome
+})
+console.log(produtosDisponivelNome)
+
+//21
+const usuarios = [
+    { nome: "Ana", idade: 22, ativo: true },
+    { nome: "Carlos", idade: 17, ativo: true },
+    { nome: "Amanda", idade: 25, ativo: false },
+    { nome: "João", idade: 30, ativo: true },
+    { nome: "Pedro", idade: 19, ativo: false },
+    { nome: "Lucas", idade: 28, ativo: true }
+];
+const usuariosAdultosAtivos = usuarios.filter((item) =>{
+    return  item.idade >=18 && item.ativo
+})
+const nomeIdadeAdultosAtivos = usuariosAdultosAtivos.map(({nome,idade})=>{
+    return {nome, idade}
+})
+console.log(nomeIdadeAdultosAtivos) 
+
+
+//22
+const produtos = [
+    { nome: "Teclado", preco: 150, estoque: 10 },
+    { nome: "Mouse", preco: 80, estoque: 0 },
+    { nome: "Monitor", preco: 900, estoque: 5 },
+    { nome: "Headset", preco: 250, estoque: 3 },
+    { nome: "Webcam", preco: 300, estoque: 0 }
+];
+
+const produtosCarosComEstoque = produtos.filter((item)=>{
+    return item.preco > 200 && item.estoque > 0
+})
+const produtosComDesconto = produtosCarosComEstoque.map(({nome,preco,valorComDesconto})=>{
+    valorComDesconto = preco * 0.90 
+    return {nome,valorComDesconto} 
+})
+console.log(produtosComDesconto)
