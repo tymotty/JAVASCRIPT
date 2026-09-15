@@ -198,14 +198,14 @@ const adultos = pessoas.filter((item) => {
 console.log(adultos)
 
 //05
-const produto = [
+const produt2 = [
     { nome: "Teclado", preco: 150 },
     { nome: "Mouse", preco: 80 },
     { nome: "Monitor", preco: 900 },
     { nome: "Headset", preco: 250 },
     { nome: "Webcam", preco: 120 }
 ];
-const produtosCaros = produto.filter((item)=>{
+const produtosCaros = produt2.filter((item)=>{
     return item.preco > 200;
 })
 
@@ -484,7 +484,7 @@ const produtosDisponivelNome = produtosEstoqueDisponivel.map((item) =>{
 console.log(produtosDisponivelNome)
 
 //21
-const usuarios = [
+const usuarios1 = [
     { nome: "Ana", idade: 22, ativo: true },
     { nome: "Carlos", idade: 17, ativo: true },
     { nome: "Amanda", idade: 25, ativo: false },
@@ -492,7 +492,7 @@ const usuarios = [
     { nome: "Pedro", idade: 19, ativo: false },
     { nome: "Lucas", idade: 28, ativo: true }
 ];
-const usuariosAdultosAtivos = usuarios.filter((item) =>{
+const usuariosAdultosAtivos = usuarios1.filter((item) =>{
     return  item.idade >=18 && item.ativo
 })
 const nomeIdadeAdultosAtivos = usuariosAdultosAtivos.map(({nome,idade})=>{
@@ -502,7 +502,7 @@ console.log(nomeIdadeAdultosAtivos)
 
 
 //22
-const produtos = [
+const produtos1 = [
     { nome: "Teclado", preco: 150, estoque: 10 },
     { nome: "Mouse", preco: 80, estoque: 0 },
     { nome: "Monitor", preco: 900, estoque: 5 },
@@ -510,7 +510,7 @@ const produtos = [
     { nome: "Webcam", preco: 300, estoque: 0 }
 ];
 
-const produtosCarosComEstoque = produtos.filter((item)=>{
+const produtosCarosComEstoque = produtos1.filter((item)=>{
     return item.preco > 200 && item.estoque > 0
 })
 const produtosComDesconto = produtosCarosComEstoque.map(({nome,preco,valorComDesconto})=>{
@@ -518,3 +518,68 @@ const produtosComDesconto = produtosCarosComEstoque.map(({nome,preco,valorComDes
     return {nome,valorComDesconto} 
 })
 console.log(produtosComDesconto)
+
+console.log("--------------------------------FIND--------------------------------")
+//01
+const produtos2 = [
+    { nome: "Teclado", preco: 150 },
+    { nome: "Mouse", preco: 80 },
+    { nome: "Monitor", preco: 900 },
+    { nome: "Headset", preco: 250 }
+];
+
+const maior200 = produtos2.find((item)=>{
+    return item.preco >200
+})
+console.log(maior200)
+
+//02
+const usuarios2 = [
+    { nome: "Ana", idade: 17, ativo: false },
+    { nome: "Carlos", idade: 22, ativo: true },
+    { nome: "João", idade: 30, ativo: true },
+    { nome: "Pedro", idade: 19, ativo: false }
+];
+
+const usuarioAtivo = usuarios2.find((item)=>{
+    return item.ativo
+})
+console.log(usuarioAtivo )
+
+//03
+const produto4 = [
+    { nome: "Teclado", preco: 150, estoque: 10 },
+    { nome: "Mouse", preco: 80, estoque: 0 },
+    { nome: "Monitor", preco: 900, estoque: 5 },
+    { nome: "Headset", preco: 250, estoque: 3 },
+    { nome: "Webcam", preco: 300, estoque: 0 }
+];
+
+
+const produtoEncontrado = produto4.find((item)=>{
+    return item.preco >200 && item.estoque > 0
+})
+
+
+//04
+const produtos3 = [
+    { nome: "Teclado", preco: 150 },
+    { nome: "Mouse", preco: 80 },
+    { nome: "Headset", preco: 250 }
+];
+const produto = produtos3.find((item) =>{
+    return item.preco >1000
+})
+console.log(produto)
+
+//05
+const usuarios = [
+    { nome: "Ana", idade: 22, cidade: "São Paulo", ativo: true },
+    { nome: "Carlos", idade: 17, cidade: "Curitiba", ativo: true },
+    { nome: "Amanda", idade: 25, cidade: "São Paulo", ativo: false },
+    { nome: "João", idade: 30, cidade: "Curitiba", ativo: true },
+    { nome: "Pedro", idade: 28, cidade: "Curitiba", ativo: true }
+];
+const usuarioEncontrado = usuarios.find(({idade,cidade,ativo})=>{
+    return idade >18 && ativo && cidade==="Curitiba"
+})
