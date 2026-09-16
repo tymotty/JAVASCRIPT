@@ -583,3 +583,6 @@ const usuarios = [
 const usuarioEncontrado = usuarios.find(({idade,cidade,ativo})=>{
     return idade >18 && ativo && cidade==="Curitiba"
 })
+
+
+
