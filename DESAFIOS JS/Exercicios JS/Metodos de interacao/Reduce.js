@@ -278,3 +278,99 @@ const resumo = numeros.reduce((acumulador,item)=>{
     return acumulador
 },{})
 console.log(resumo)
+
+
+
+//20
+const resumoNotas= alunos.reduce((acumulador,item)=>{
+  acumulador.soma += item.nota
+  acumulador.quantidade += 1
+  if (item.nota > acumulador.maiorValor){
+    acumulador.maiorValor = item.nota
+  }
+  return acumulador
+},{
+  soma: 0,
+  quantidade: 0,
+  maiorValor: 0
+})
+console.log(resumoNotas)
+
+
+///21
+const resumoProdutos = produtos.reduce((acumulador,item)=>{
+  acumulador.total += item.preco
+  acumulador.quantidade += 1
+  if (item.preco > 200) {
+    acumulador.acimaDe200 += 1
+  }
+  return acumulador
+},{
+    total: 0,
+    quantidade:0,
+    acimaDe200: 0
+})
+console.log(resumoProdutos)
+
+//22
+const resumoVendedor = vendas.reduce((acumulador,item)=>{
+  if (! acumulador[item.vendedor]) {
+    acumulador[item.vendedor] = {
+    total: item.valor,
+    maiorVenda: item.valor}
+  } else {
+    acumulador[item.vendedor].total += item.valor
+  if(item.valor > acumulador[item.vendedor].maiorVenda) {
+    acumulador[item.vendedor].maiorVenda = item.valor
+  }}
+  return acumulador
+},{})
+console.log(resumoVendedor)
+
+//23
+
+const resumoVendedo = vendas.reduce((acumulador,item)=>{
+  if (!acumulador[item.vendedor]) {
+      acumulador[item.vendedor] = {
+      quantidade: 0,
+      total: 0,
+      acimaDe200: 0}
+  }
+    acumulador[item.vendedor].quantidade += 1
+    acumulador[item.vendedor].total += item.valor
+    if(item.valor > 200) {
+      acumulador[item.vendedor].acimaDe200 +=1
+    }
+    return acumulador
+  
+},{});
+console.log(resumoVendedo)
+
+
+//24
+const resumoTurma = alunos.reduce((acumulador,item)=>{
+  if(!acumulador[item.turma]) {
+    acumulador[item.turma] ={
+      quantidade: 0,
+      somaNotas: 0,
+      acimaDe7: 0
+    }
+  };
+  
+  acumulador[item.turma].quantidade +=1
+  acumulador[item.turma].somaNotas += item.nota
+  if(item.nota > 7){
+    acumulador[item.turma].acimaDe7 +=1
+  }
+  return acumulador
+},{})
+console.log(resumoTurma)
+
+//25
+const produtosPorCategori = produtos.reduce((acumulador,item)=>{
+ const resumo = acumulador[item.categoria] || []
+  resumo.push(item.nome)
+  acumulador[item.categoria] = resumo
+  return acumulador
+},{})
+console.log(produtosPorCategori)
