@@ -160,7 +160,4 @@ let ultimos3 = playlistCompleta.slice(-3) /*coloquei let pensando que caso fosse
 
 console.log(playlist)
 console.log(playlistCompleta)
-console.log(playlistOrdenada)
-console.log(playlistOrdenadaString)
-console.log(ultimos3)
 

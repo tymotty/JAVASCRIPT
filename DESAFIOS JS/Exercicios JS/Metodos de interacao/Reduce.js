@@ -21,7 +21,7 @@ const total = produto.reduce((acumulador,item)=>{
 
 
 //03
-const numeros = [10, 25, 8, 30, 15, 42];
+const numeros = [10, 5, 20, 8, 15];
 
 const quantidade = numeros.reduce((contador,item) =>{ 
     return item>20 ? contador +1 : contador;
@@ -164,7 +164,7 @@ const resumoVendedores = vendas.reduce((acumulador,item)=>{
     if (acumulador[item.vendedor]){
         acumulador[item.vendedor].quantidade +=1
         acumulador[item.vendedor].total += item.valor
-        if (item.valor >acumulador[item.vendedor].maiorVenda ) {
+        if (item.valor > acumulador[item.vendedor].maiorVenda ) {
         acumulador[item.vendedor].maiorVenda = item.valor
         }
     }
@@ -181,13 +181,100 @@ const resumoVendedores = vendas.reduce((acumulador,item)=>{
 console.log(resumoVendedores)
 
 //13
-
 const alunos = [
-    { nome: "Ana", turma: "A", nota: 8 },
-    { nome: "João", turma: "B", nota: 7 },
-    { nome: "Pedro", turma: "A", nota: 9 },
+    { nome: "Ana", turma: "A", nota: 8 }, //1 nota: 8, maior nota:8
+    { nome: "João", turma: "B", nota: 7 },//1 nota 7, maior nota 7
+    { nome: "Pedro", turma: "A", nota: 9 },//2 nota 9 , maior nota 9
     { nome: "Maria", turma: "B", nota: 6 },
     { nome: "Lucas", turma: "A", nota: 10 }
 ];
 
-const resumoTurmas 
+
+//Desafio sem "If e else"
+const resumoTurmas = alunos.reduce((acumulador,item)=>{
+    const restumra = acumulador[item.turma] ||{ //a variavel vai ser dividida pela turma, se a turma tiver cadastrada ele atualiza se nao ele cria
+        quantidade: 0,
+        somaNota: 0,
+        maiorNota: 0
+    }
+    restumra.quantidade +=1;
+    restumra.somaNota += item.nota;
+    if (item.nota > restumra.maiorNota) {  
+    restumra.maiorNota = item.nota};
+
+    acumulador[item.turma] = restumra
+    return acumulador
+
+},{})
+console.log(resumoTurmas)
+
+
+
+
+//14
+const produtosPorCategoria = produtos.reduce((acumulador, item) => {
+    if (acumulador[item.categoria]) {
+        acumulador[item.categoria].push(item.nome)
+    } else {
+        acumulador[item.categoria] = [item.nome]
+    }
+    return acumulador
+}, {})
+
+
+//15
+const numero = [10, 5, 20, 8, 15]
+
+const numerosPares= numero.reduce((acumulador,item)=>{
+   if(item % 2 === 0) {
+        acumulador.push(item)
+    }
+    return acumulador
+}, [])
+console.log(numerosPares)
+
+//16
+const numerosParesMultiplos = numero.reduce((acumulador,item)=>{
+   if(item % 2 === 0) {
+        acumulador.push(item*2)
+    }
+    return acumulador
+}, [])
+console.log(numerosParesMultiplos)
+
+//17
+const numeros2 = [1, 2, 2, 3, 4, 4, 5, 1, 3];
+const numerosUnicos = numeros2.reduce((acumulador,item)=>{
+    if(!acumulador.includes(item)){
+        acumulador.push(item)
+    } 
+    return acumulador
+},[])
+console.log(numerosUnicos )
+
+//18
+const numeros20 = [10, 20, 15, 30, 20, 10, 40];
+const maioresQue20 = numeros20.reduce((acumulador,item)=>{
+    if(item>20){
+        acumulador.push(item)
+    }
+    return acumulador
+},[])
+console.log(maioresQue20)
+
+//19
+const resumo = numeros.reduce((acumulador,item)=>{
+    const number = acumulador[item] || {
+        soma: 0,
+        quantidade: 0,
+        maior: 0
+    }
+    number.soma += item
+    number.quantidade + 1
+    if (item > number.maior) {
+        number.maior = item
+    }
+    acumulador[item] = number
+    return acumulador
+},{})
+console.log(resumo)
