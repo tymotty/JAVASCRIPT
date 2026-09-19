@@ -431,7 +431,7 @@ const resVendedores = vendas.reduce((acumulador,item)=>{
 
 console.log(resVendedores)
 
-
+//30
 const numeros6 = [10, 20, 15, 30, 25];
 const resultado = numeros6.reduce((acumulador,item)=>{
     acumulador.soma +=item
@@ -449,3 +449,42 @@ const resultado = numeros6.reduce((acumulador,item)=>{
 })
 
 console.log(resultado)
+
+
+
+
+//31
+const resultad = numeros.reduce((acumulador,item)=>{
+  const atual = acumulador
+  if(item > 10) {
+    atual.push(item*2)
+  }
+  acumulador = atual
+  return acumulador
+},[])
+
+
+//32
+const numerosUnic = numeros.reduce((acumulador,item)=>{
+  if(!acumulador.includes(item)) {
+    acumulador.push(item)
+  }
+  return acumulador
+},[])
+
+
+
+//33
+const resulta = numeros.reduce((acumulador,item)=>{
+  if(item %2 ===0) {
+    acumulador.push(item*2)
+  }
+  return acumulador
+},[])
+
+//34
+const notas = [7, 8, 6, 9, 10];
+
+const media = notas.reduce((acc, item) => 
+    acc + item, 0) / notas.length;
+console.log(media)
