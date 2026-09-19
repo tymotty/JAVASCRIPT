@@ -1,1 +1,1 @@
-nome
+    const atual = acumulador[item] || []

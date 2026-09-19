@@ -87,7 +87,8 @@ const produtos = [
     { nome: "Mouse", categoria: "Periférico", estoque: 15, preco: 80 },
     { nome: "Monitor", categoria: "Tela", estoque: 5,preco: 900 },
     { nome: "Headset", categoria: "Periférico", estoque: 8,preco: 250  },
-    { nome: "TV", categoria: "Tela", estoque: 3,preco: 1250 }
+    { nome: "TV", categoria: "Tela", estoque: 3,preco: 1250 },
+    { nome: "Webcam", categoria: "Periférico",estoque: 5, preco: 300 }
 ];
 
 
@@ -136,12 +137,11 @@ console.log(resumoCategorias)
 const vendas = [
     { vendedor: "Ana", produto: "Teclado", valor: 100 },
     { vendedor: "João", produto: "Mouse", valor: 250 },
-    { vendedor: "Ana", produto: "Monitor", valor: 150 },
-    { vendedor: "Pedro", produto: "Teclado", valor: 300 },
+    { vendedor: "Ana", produto: "Monitor", valor: 300 },
+    { vendedor: "Pedro", produto: "Teclado", valor: 150 },
     { vendedor: "João", produto: "Headset", valor: 100 },
     { vendedor: "Ana", produto: "Mouse", valor: 200 }
 ];
-
 const resumoVendedore = vendas.reduce((acumulador,item)=>{
     if (acumulador[item.vendedor]){
         acumulador[item.vendedor].quantidade+=1
@@ -374,3 +374,78 @@ const produtosPorCategori = produtos.reduce((acumulador,item)=>{
   return acumulador
 },{})
 console.log(produtosPorCategori)
+
+
+//26
+const produtosPorVendedor = vendas.reduce((acumulador,item)=>{
+    const atual = acumulador[item.vendedor] || []
+    atual.push(item.produto)
+
+    acumulador[item.vendedor] = atual
+    return acumulador
+}, {})
+console.log(produtosPorVendedor)
+
+
+
+//27
+const produtosCarosCategoria = produtos.reduce((acumulador,item)=>{
+    const atual = acumulador[item.categoria] ||[]
+
+    if(item.preco > 200){
+        atual.push(item.nome)
+    }
+    acumulador[item.categoria]= atual
+    return acumulador
+},{})
+
+console.log(produtosCarosCategoria)
+
+
+//28
+const produtosCarosPorCategoria = produtos.reduce((acumulador,item)=>{
+    const atual = acumulador[item.categoria] || []
+    if(item.preco>200){
+        atual.push(item)
+    }
+    acumulador[item.categoria] = atual
+    return acumulador
+},{})
+console.log(produtosCarosPorCategoria)
+
+//29
+const resVendedores = vendas.reduce((acumulador,item)=>{
+    const atual = acumulador[item.vendedor] || {
+        quantidade:0,
+        total: 0,
+        maiorVenda: 0
+    }
+    atual.quantidade += 1
+    atual.total += item.valor
+    if (item.valor> atual.maiorVenda){
+        atual.maiorVenda = item.valor 
+    }
+    acumulador[item.vendedor] = atual
+    return acumulador
+}, {})
+
+console.log(resVendedores)
+
+
+const numeros6 = [10, 20, 15, 30, 25];
+const resultado = numeros6.reduce((acumulador,item)=>{
+    acumulador.soma +=item
+    if ( item > acumulador.maior){
+        acumulador.maior = item
+    }
+    if (item< acumulador.menor){
+        acumulador.menor = item
+    }
+    return acumulador
+},{
+    soma: 0,
+    maior:0,
+    menor:Infinity
+})
+
+console.log(resultado)
