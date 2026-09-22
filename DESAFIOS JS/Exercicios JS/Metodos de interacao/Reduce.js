@@ -450,9 +450,6 @@ const resultado = numeros6.reduce((acumulador,item)=>{
 
 console.log(resultado)
 
-
-
-
 //31
 const resultad = numeros.reduce((acumulador,item)=>{
   const atual = acumulador
@@ -463,7 +460,6 @@ const resultad = numeros.reduce((acumulador,item)=>{
   return acumulador
 },[])
 
-
 //32
 const numerosUnic = numeros.reduce((acumulador,item)=>{
   if(!acumulador.includes(item)) {
@@ -471,8 +467,6 @@ const numerosUnic = numeros.reduce((acumulador,item)=>{
   }
   return acumulador
 },[])
-
-
 
 //33
 const resulta = numeros.reduce((acumulador,item)=>{
@@ -483,8 +477,23 @@ const resulta = numeros.reduce((acumulador,item)=>{
 },[])
 
 //34
-const notas = [7, 8, 6, 9, 10];
+const notas = [5, 8, 3, 10, 7, 2, 9];
 
-const media = notas.reduce((acc, item) => 
-    acc + item, 0) / notas.length;
+const media = notas.reduce((acc, item) =>{
+    return acc + item
+},0)/notas.length
 console.log(media)
+  
+//35
+const mediaMaior7 = notas.reduce((acc,item)=>{
+    if(item>7){
+        const quantidade = 0
+        acc += item
+        quantidade + 1
+    }
+    return acc / quantidade
+},0)
+
+console.log(mediaMaior7)
+
+//36
