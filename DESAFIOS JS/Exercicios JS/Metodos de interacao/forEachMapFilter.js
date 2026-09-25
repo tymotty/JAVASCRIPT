@@ -586,3 +586,71 @@ const usuarioEncontrado = usuarios.find(({idade,cidade,ativo})=>{
 
 
 
+const temperaturas = [22, 28, 19, 31, 25];
+
+// 1. Use forEach para imprimir cada temperatura no console
+temperaturas.forEach((item)=>{
+    console.log(item)
+})
+// 2. Use map para criar um array convertendo cada temperatura para Fahrenheit (°F = °C * 9/5 + 32)
+const temperaturasFahrenheit = temperaturas.map((item)=>{
+    return item * 9/5 + 32
+},[])
+console.log(temperaturasFahrenheit)
+// 3. Use filter para pegar só as temperaturas acima de 25°C
+
+const temperatura25 = temperaturas.filter((item)=>{
+    return item>25
+})
+console.log(temperatura25)
+
+
+const aluno = [
+  { nome: "Ana", nota: 8.5 },
+  { nome: "Bruno", nota: 4.2 },
+  { nome: "Carla", nota: 9.1 },
+  { nome: "Diego", nota: 5.8 },
+];
+
+// 1. Use find para pegar o primeiro aluno com nota abaixo de 6
+const nota6 = aluno.find((item)=>{
+    return item.nota < 6
+})
+console.log(nota6)
+// 2. Use filter + map (encadeados) para pegar só os nomes dos alunos aprovados (nota >= 6)
+const alunosMaior6 = aluno.filter((item)=>{
+    return item.nota>=6
+}) 
+.map((item)=>{
+    return item.nome
+})
+console.log(alunosMaior6)
+
+// 3. Use reduce para calcular a média geral das notas da turma
+
+const mediaNota = aluno.reduce((acc,item)=>{
+    return acc +item.nota
+},0)/aluno.length
+console.log(mediaNota)
+
+
+
+const vendas = [
+  { vendedor: "Ana", produto: "Notebook", valor: 3500 },
+  { vendedor: "Bruno", produto: "Mouse", valor: 80 },
+  { vendedor: "Ana", produto: "Monitor", valor: 900 },
+  { vendedor: "Carla", produto: "Teclado", valor: 150 },
+  { vendedor: "Bruno", produto: "Notebook", valor: 3200 },
+  { vendedor: "Ana", produto: "Mouse", valor: 75 },
+];
+
+// Use reduce para criar um objeto onde cada chave é o nome do vendedor
+// e o valor é o total vendido por ele.
+// Resultado esperado:
+// { Ana: 4475, Bruno: 3280, Carla: 150 }
+const vendaTotalVendedor = vendas.reduce((acc, item) => {
+  acc[item.vendedor] = (acc[item.vendedor] || 0) + item.valor;
+  
+  return acc;
+}, {});
+console.log(vendaTotalVendedor)
