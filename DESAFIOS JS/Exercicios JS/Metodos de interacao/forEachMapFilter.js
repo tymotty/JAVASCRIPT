@@ -654,3 +654,26 @@ const vendaTotalVendedor = vendas.reduce((acc, item) => {
   return acc;
 }, {});
 console.log(vendaTotalVendedor)
+
+
+
+
+const gastosMes = [
+  { descricao: "Mercado", valor: 350 },
+  { descricao: "Internet", valor: 100 },
+  { descricao: "Lazer", valor: 120 }
+];
+let total = 0
+gastosMes.forEach((item,atual)=>{
+    console.log(`${item.descricao}: R$ ${item.valor}`)
+    
+    total += item.valor
+})
+console.log(`Total: ${total}`)
+
+
+const alunosTurma = [
+  { nome: "Ana", notas: [8, 7, 9] },
+  { nome: "Bruno", notas: [5, 6, 4] },
+  { nome: "Carla", notas: [10, 9, 8] }
+];
