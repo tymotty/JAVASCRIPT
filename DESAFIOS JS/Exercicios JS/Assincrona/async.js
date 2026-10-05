@@ -51,18 +51,99 @@ buscarUsuario1()
 
 
 
-async function buscarUsuarios2() {
-    try{
-        const resultado = await fetch("https://jsonplaceholder.typicode.com/users")
+async function buscarUsuarios() {
+  try {const resultado = await fetch('https://jsonplaceholder.typicode.com/users');
+       
+      if(!resultado.ok){
+        throw new Error("Erro na requisicao")}
+       
+      const dados = await resultado.json()
+      
+      const dadoUsuario = dados.forEach((item)=>{
+        console.log(item.name,item.email)
+      })
+      
+       }
+  catch (erro){
+    console.log("Erro:", erro)
+  }
+  
+  
+} await buscarUsuarios()
 
-        if(!resultado.ok){
-            throw new Error ("Erro na requisicao")
-        }
-        const dados = resultado.json()
-        console.log(dados.name)
-    }
-    catch(erro){
-        console.log("Erro:",erro )
-    }
+async function buscarUsuarios2(){
+  try {
+    const resultado = await fetch('https://jsonplaceholder.typicode.com/users')
+    
+    if (!resultado.ok){
+      throw new Error("Erro na requisicao")}
+    
+    
+    const dados = await resultado.json()
+    
+    const usuarioFiltrado = dados.filter((item)=>{
+      return item.id > 5
+    })
+    usuarioFiltrado.forEach = ((item)=>{
+      console.log(`${item.name} - ${item.email}`)
+    }) 
+  }
+  
+  catch (erro){
+    console.log("Erro:", erro)
+  }
 }
-buscarUsuarios2()
+await buscarUsuarios2()
+
+
+
+
+async function buscarUsuarioPorNome(nome) {
+  try {
+    const resultado = await fetch("https://jsonplaceholder.typicode.com/users")
+    
+    if(!resultado.ok){
+      throw new Error ("Erro na requisicao")}
+    
+    const dados = await resultado.json()
+    
+   
+      if(dados.name = nome){
+        console.log(
+          `Usuário encontrado: ${dados.name} 
+ Email: ${dados.email}`)}
+    else{
+    console.log("Usuário não encontrado")}
+  }
+  
+  catch(erro){
+console.log("Erro:",erro)}
+}
+await buscarUsuarioPorNome("Glenna Reichert")
+
+
+
+
+
+async function buscarUsuarioPorNome(nome) {
+  try {
+    const resultado = await fetch("https://jsonplaceholder.typicode.com/users")
+    
+    if(!resultado.ok){
+      throw new Error ("Erro na requisicao")}
+    
+    const dados = await resultado.json()
+    
+   
+      if(name === nome){
+        console.log(
+          `Usuário encontrado: ${name} 
+ Email: ${email}`)}
+    else{
+    console.log("Usuário não encontrado")}
+  }
+  
+  catch(erro){
+console.log("Erro:",erro)}
+}
+await buscarUsuarioPorNome("Glenna Reichert")
