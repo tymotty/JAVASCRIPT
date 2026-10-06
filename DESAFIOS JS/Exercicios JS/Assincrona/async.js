@@ -307,3 +307,161 @@ async function criarPost() {
     }
 
 }criarPost()
+
+async function criarPost1(titulo, texto, usuarioId) {
+    try {
+      const enviado = await fetch("https://jsonplaceholder.typicode.com/posts",{
+        method: "POST",
+        
+        header:{"Content-Type": "application/json"},
+        body: JSON.stringify({
+          title: titulo,
+          body: texto,
+          userId:usuarioId})
+      })
+      
+      if(!enviado.ok){
+        throw new Error("Erro no envio!")
+      }
+      const dados = await enviado.json()
+      
+      console.log(dados.title)
+      console.log(dados.body)
+      console.log(dados.userId)
+    }
+  catch(erro){
+    console.log("Erro:",erro)
+  }
+}
+
+await criarPost1(
+    "Aprendendo APIs",
+    "Hoje aprendi a fazer POST com fetch",
+    5
+)
+
+async function criarPost(titulo, texto, usuarioId) {
+    try{
+      const enviado = await fetch("https://jsonplaceholder.typicode.com/posts",{
+        method: "POST",
+        
+        headers: {"Content-Type": "Application/json"},
+        body: JSON.stringify({
+          title: titulo,
+          body: texto,
+          userId: usuarioId
+        })
+      })
+      if(!enviado.ok){
+        throw new Error("Erro no envio")
+      }
+      const dados = await enviado.json()
+        console.log("Post criado!")
+        console.log("ID:", dados.id)
+        console.log("Titulo:", dados.title)
+        console.log("Texto:",dados.body)
+        console.log("Usuario ID:", dados.userId)
+      
+      if(dados.id){
+        console.log("Post possui um ID:", dados.id)
+      }
+    }
+  catch(erro){
+    console.log("Erro:",erro)}
+}
+
+await criarPost(
+    "Meu projeto",
+    "Estou começando a integrar APIs no JavaScript",
+    3
+)
+
+async function criarPostParaUsuario(nomeUsuario, titulo, texto) {
+    try{
+      const resultado = await fetch ("https://jsonplaceholder.typicode.com/users")
+      if(!resultado.ok){
+        throw new Error("Erro na requisicao")
+      }
+      const dadosUsuario = await resultado.json()
+      
+      const usuario = dadosUsuario.find((item)=>{
+        return item.name === nomeUsuario
+      })
+      if(usuario){
+        console.log("Usuario encontrado:", usuario.name)
+        
+       const enviado = await fetch("https://jsonplaceholder.typicode.com/posts",{
+           method: "POST",
+           
+           headers: {"Content-Type": "Application/json"},
+           body: JSON.stringify({
+             title: titulo,
+             body: texto,
+             userId: usuario.id
+             })
+           
+         })
+        if(!enviado.ok){
+           throw new Error("Erro no envio")
+         }
+        console.log("Post Criado")
+        
+        const dadosEnvio = await enviado.json()
+        
+        console.log("ID:", dadosEnvio.id)
+        console.log("Titulo:", dadosEnvio.title)
+        console.log("Texto:",dadosEnvio.body)
+        console.log("Usuario ID:", usuario.id)        
+         
+      }
+      else{
+        console.log("Usuário não encontrado")
+      }
+    }
+  catch(erro){
+    console.log("Erro:",erro)
+  }
+}
+await criarPostParaUsuario(
+    "Leanne Graham",
+    "Meu novo projeto",
+    "Estou aprendendo a integrar APIs com JavaScript"
+)
+
+
+
+async function atualizarPost(id, titulo, texto, usuarioId) {
+  try{
+    const alterar = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,{
+      method: "PUT",
+      
+       headers: {
+        "Content-Type": "application/json"
+    },
+      body: JSON.stringify ({
+        title: titulo,
+        body: texto,
+        userId: usuarioId})
+    })
+    if(!alterar.ok){
+      throw new Error("Erro na alteracao")
+    }
+    
+    const dados = await alterar.json()
+    
+    console.log("Post atualizado!")
+    console.log("ID:", dados.id)
+    console.log("Titulo:", dados.title)
+    console.log("Texto:", dados.body)
+    console.log("Usuario ID:", dados.userId) 
+    
+  }
+  catch(erro){console.log("Erro:", erro)}
+}
+
+await atualizarPost(
+    1,
+    "Meu post atualizado",
+    "Agora estou aprendendo PUT com fetch",
+    3
+)
