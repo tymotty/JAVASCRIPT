@@ -465,3 +465,153 @@ await atualizarPost(
     "Agora estou aprendendo PUT com fetch",
     3
 )
+ async function atualizarTituloPost(id, novoTitulo) {
+  try{
+    const alteracao = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,{
+      method: "PATCH",
+      
+       headers: {
+        "Content-Type": "application/json"
+    },
+      body: JSON.stringify({
+        title: novoTitulo})
+    })
+    
+    if(!alteracao.ok){
+      throw new Error("Erro na alteracao")
+    }
+    const dados = await alteracao.json()
+    
+    console.log("Post atualizado")
+    console.log(`ID: ${dados.id}`)
+    console.log(`Titulo: ${dados.title}`)
+    console.log("-------------------------------------------")
+    
+  }
+  catch(erro){
+    console.log("Erro:", erro)
+  }
+}
+await atualizarTituloPost(
+    1,
+    "Aprendendo PATCH com JavaScript"
+)
+
+
+
+await excluirPost(1)
+
+async function excluirPost(id) {
+    try {
+        const excluir = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+            method: "DELETE"
+        })
+
+        if (!excluir.ok) {
+            throw new Error("Erro na requisicao")
+        }
+
+        console.log("Operacao realizada com sucesso")
+        console.log("-------------------------------------------")
+
+    } catch (erro) {
+        console.log("Erro:", erro)
+    }
+}
+
+await alterarTituloPost(5, "Novo titulo do post")
+
+async function alterarTituloPost(id, novoTitulo) {
+    try {
+        const resultado = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: novoTitulo
+            })
+        })
+
+        if (!resultado.ok) {
+            throw new Error("Erro na alteracao")
+        }
+
+        const dados = await resultado.json()
+
+        console.log("Alteracao no post:")
+        console.log("titulo:", dados.title)
+              console.log("-------------------------------------------")
+
+    } catch (erro) {
+        console.log("Erro:", erro)
+    }
+}
+
+async function buscarPostsDoUsuario(userId) {
+  try {
+    const resultado = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+    if(!resultado.ok){
+throw new Error("erro na requisicao")
+    }
+    const dados = await resultado.json()
+    
+    dados.forEach((item)=> {
+       console.log("Titulo:",item.title)     
+    })
+              console.log("-------------------------------------------")
+
+    }
+  catch(erro){
+    console.log("Erro:", erro)
+  }
+}
+
+
+async function buscarPost(userId, postId) {
+  try {
+    const resultado = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}&id=${postId}`)
+    if(!resultado.ok){
+throw new Error("erro na requisicao")
+    }
+    const dados = await resultado.json()
+    
+    dados.forEach((item)=> {
+       console.log("Titulo:",item.title)     
+    })
+          console.log("-------------------------------------------")
+
+    }
+  catch(erro){
+    console.log("Erro:", erro)
+  }
+}
+
+
+await buscarPost(3, 25)
+
+
+
+async function buscarPosts(userId) {
+  try {
+    const resultado = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+    if(!resultado.ok){
+throw new Error("erro na requisicao")
+    }
+    
+    const dados = await resultado.json()
+    
+    console.log("-------------------------------------------")
+    return dados
+   
+    }
+  
+  catch(erro){
+    console.log("Erro:", erro)
+  }
+}
+
+
+const posts = await buscarPosts(3)
+
+console.log(posts)
