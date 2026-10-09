@@ -161,3 +161,48 @@ let ultimos3 = playlistCompleta.slice(-3) /*coloquei let pensando que caso fosse
 console.log(playlist)
 console.log(playlistCompleta)
 
+const alunos = [
+  { nome: "Ana", turma: "A", media: 8.2, ativo: true },
+  { nome: "Bruno", turma: "B", media: 5.5, ativo: true },
+  { nome: "Carla", turma: "A", media: 9.1, ativo: false },
+  { nome: "Diego", turma: "B", media: 7.0, ativo: true },
+  { nome: "Elisa", turma: "A", media: 6.8, ativo: true }
+];
+
+
+const nomesTurmaA = alunos
+  .filter(item => item.ativo && item.turma === "A" && item.media >= 7)
+  .map(item => item.nome);
+
+const alunoAbaixo = alunos.find(item => item.ativo && item.media < 6);
+
+
+
+
+
+const temperaturas = [18, 25, 31, 12, 28, 35, 22];
+
+const diasQuentes = temperaturas.filter((item)=>{
+  return item>25
+})
+diasQuentes.forEach((item)=>{
+  console.log(`Dia Quente: ${item}c`)
+})
+
+const filmes = [
+  { titulo: "Alfa", generos: ["acao", "drama"], nota: 8.1, assistido: true },
+  { titulo: "Beta", generos: ["comedia"], nota: 6.4, assistido: false },
+  { titulo: "Gama", generos: ["acao", "ficcao"], nota: 9.0, assistido: false },
+  { titulo: "Delta", generos: ["drama"], nota: 7.5, assistido: true },
+  { titulo: "Epsilon", generos: ["ficcao", "drama"], nota: 8.8, assistido: false }
+];
+const titulosFilmes = filmes
+  .filter(filme => !filme.assistido && filme.nota > 8 && (filme.generos.includes("drama") || filme.generos.includes("ficcao")))
+  .map(filme => filme.titulo);
+
+console.log(titulosFilmes); 
+
+
+const filmeEspecial = filmes.find(filme => filme.assistido && filme.nota > 9);
+const resultadoMensagem = filmeEspecial ? filmeEspecial.titulo : "Nenhum filme encontrado";
+console.log(resultadoMensagem); 

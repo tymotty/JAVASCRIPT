@@ -615,3 +615,9 @@ throw new Error("erro na requisicao")
 const posts = await buscarPosts(3)
 
 console.log(posts)
+
+
+
+
+
+
