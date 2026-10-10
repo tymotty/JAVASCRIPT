@@ -206,3 +206,18 @@ console.log(titulosFilmes);
 const filmeEspecial = filmes.find(filme => filme.assistido && filme.nota > 9);
 const resultadoMensagem = filmeEspecial ? filmeEspecial.titulo : "Nenhum filme encontrado";
 console.log(resultadoMensagem); 
+
+
+
+
+const produtosVeraoComDesconto = produtos
+  .filter(produto => produto.estoque > 0 && produto.tags.includes("verao"))
+  .map(produto => ({
+    nome: produto.nome,
+    precoFinal: produto.preco * 0.9 
+  }));
+const produtoSemEstoque = produtos.find((item)=>{
+  item.estoque === 0 && item.preco>250 
+})
+
+const produtoSemEstoqueCaro = produtos.find(produto => produto.estoque === 0 && produto.preco > 250);

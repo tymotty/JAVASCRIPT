@@ -32,3 +32,6 @@ console.log(produto.textContent)
 
 const resultado = document.querySelector("#resultado")
 resultado.innerHTML = "<p>Produto adicionado com sucesso!</p>"
+
+
+
