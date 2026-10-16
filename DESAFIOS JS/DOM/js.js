@@ -30,8 +30,17 @@ descricao.textContent = "Confira nossos produtos"
 const produto = document.querySelector("#produto")
 console.log(produto.textContent)
 
-const resultado = document.querySelector("#resultado")
-resultado.innerHTML = "<p>Produto adicionado com sucesso!</p>"
 
 
 
+const nomeProduto = document.getElementById("nome").value
+
+const mensagem= document.getElementById("mensagem")
+mensagem.textContent = "Produto pronto para cadastro"
+
+const resultado  = document.getElementById("resultado")
+resultado.textContent = "Produto selecionado: " + nomeProduto
+
+
+const tituloTexto = document.getElementById("titulo").textContent
+console.log(tituloTexto)
