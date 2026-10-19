@@ -78,3 +78,41 @@ mensagem.textContent = `Bem-vindo, ${nomeUsuario}!`
 const perfil = document.querySelector ("#perfil")
 perfil.innerHTML = `<h2>Perfil do usuário</h2> <p>${nomeUsuario}</p>`
 
+const status1 = document.querySelector("#status")
+
+status1.classList.remove("inativo")
+status1.classList.add("ativo")
+
+
+const mensagem = document.querySelector("#mensagem")
+let temSucesso = mensagem.classList.contains("sucesso")
+console.log(temSucesso)
+
+
+const status = document.querySelector("#status")
+
+if (status.classList.contains("inativo")) {
+  status.classList.remove("inativo")
+  status.classList.add("ativo")
+}
+const email = document.querySelector("#email")
+
+console.log(email.getAttribute("placeholder"))
+
+email.setAttribute("placeholder", "Informe seu e-mail profissional")
+
+const email1 = document.querySelector("#email");
+email1.removeAttribute("disabled");
+
+
+const senha = document.querySelector("#senha");
+console.log(senha.getAttribute("type"));
+
+const senha1 = document.querySelector("#senha");
+senha1.setAttribute("type", "text");
+
+const botao1 = document.querySelector("#enviar");
+botao1.removeAttribute("disabled");
+
+const mensagem = document.querySelector("#mensagem");
+mensagem.style.color = "green";
