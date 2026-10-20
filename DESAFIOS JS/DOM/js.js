@@ -17,7 +17,7 @@ const botoes = document.querySelectorAll( "button")
 const section = document.querySelector("section")
 const produto1 = document.querySelectorAll("#produto")
 const produtoSection = section.querySelectorAll(".produto")
-const botao = document.querySelector(".botao") 
+const botao1 = document.querySelector(".botao") 
 
 
 
@@ -89,13 +89,12 @@ let temSucesso = mensagem.classList.contains("sucesso")
 console.log(temSucesso)
 
 
-const status = document.querySelector("#status")
+const status2 = document.querySelector("#status")
 
 if (status.classList.contains("inativo")) {
   status.classList.remove("inativo")
   status.classList.add("ativo")
 }
-const email = document.querySelector("#email")
 
 console.log(email.getAttribute("placeholder"))
 
@@ -111,8 +110,69 @@ console.log(senha.getAttribute("type"));
 const senha1 = document.querySelector("#senha");
 senha1.setAttribute("type", "text");
 
-const botao1 = document.querySelector("#enviar");
-botao1.removeAttribute("disabled");
+const botao2 = document.querySelector("#enviar");
+botao2.removeAttribute("disabled");
 
 const mensagem = document.querySelector("#mensagem");
 mensagem.style.color = "green";
+
+const mensagem = document.querySelector("#mensagem");
+mensagem.classList.remove("erro")
+mensagem.classList.add("sucesso")
+mensagem.textContent = "E-mail válido!"
+const email = document.querySelector("#email")
+email.removeAttribute("disabled")
+
+
+const botao3 =  document.querySelector("#botao")
+botao3.classList.remove("desativado")
+botao3.classList.add("ativo")
+botao3.textContent = "Desativado"
+const status = document.querySelector("#status")
+status.textContent= "Sistema ativado"
+
+const botao4 =  document.querySelector("#botao")
+
+botao4.classList.toggle("ativo")
+botao4.classList.toggle("desativado")
+
+const status = document.querySelector("#status")
+const botao5 =  document.querySelector("#botao")
+
+status.classList.remove("inativo")
+status.classList.add("ativo")
+status.textContent = "Sistema ligado"//Da pra fazer assim?
+
+botao5.removeAttribute("disabled")
+botao5.textContent = "Desativar sistema"
+
+const resultado1 = document.querySelector("#resultado")
+const botao =  document.querySelector("#botao")
+botao.addEventListener("click", function(){
+    resultado1.textContent= "Olá! Evento executado com sucesso."
+})
+
+
+let clicou = 0
+const botao5 = document.querySelector("#botao")
+const contador =  document.querySelector("#contador")
+botao5.addEventListener("click", function(){
+    clicou ++
+    contador.textContent=`Você clicou ${clicou} vezes`
+})
+
+
+const botaoAdd = document.querySelector("#adicionar")
+const botaoZerar = document.querySelector("#zerar")
+const contador1 =  document.querySelector("#contador")
+let contagem = 0
+botaoAdd.addEventListener("click",function(){
+    contagem ++
+    contador1.textContent = `Contagem: ${contagem}`
+
+})
+botaoZerar.addEventListener("click", function(){
+    contagem = 0
+    contador1.textContent = `Contagem: ${contagem}`
+
+})
