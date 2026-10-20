@@ -176,3 +176,44 @@ botaoZerar.addEventListener("click", function(){
     contador1.textContent = `Contagem: ${contagem}`
 
 })
+
+const curso = document.querySelector("#curso")
+const resultado2 = document.querySelector("#resultado")
+curso.addEventListener("change", function(){
+    resultado2.textContent = `Curso Selecionado: ${curso.value}`
+})
+
+const nome1 = document.querySelector("#nome")
+const botao6 = document.querySelector("#botao")
+const resultado3 = document.querySelector("#resultado")
+botao6.addEventListener("click", function(){
+     resultado3.textContent = `Nome confirmado: ${nome1.value}`
+})
+
+const formulario = document.querySelector("#formulario")
+const nome2 = document.querySelector("#nome")
+const resultado4 = document.querySelector("#resultado")
+formulario.addEventListener("submit", function(){
+    event.preventDefault();
+
+    resultado4.textContent = `Cadastro recebido: ${nome2.value}`
+})
+
+const formulario1 = document.querySelector("#formulario")
+const nome3 = document.querySelector("#nome")
+const resultado5 = document.querySelector("#resultado")
+formulario1.addEventListener("submit", function(event){
+    event.preventDefault()
+    if(nome3.value === ""){
+        resultado5.textContent= "Por favor, digite seu nome."
+    }else {
+        resultado5.textContent= `Cadastro recebido: ${nome3.value} `
+    }
+})
+
+
+const produtos = document.querySelector("#produtos")
+const resultado6 = document.querySelector("#resultado")
+produtos.addEventListener("click", function(){
+    resultado6.textContent= `Produto Selecionado ${produto}`
+})
