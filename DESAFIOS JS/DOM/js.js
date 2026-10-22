@@ -214,6 +214,6 @@ formulario1.addEventListener("submit", function(event){
 
 const produtos = document.querySelector("#produtos")
 const resultado6 = document.querySelector("#resultado")
-produtos.addEventListener("click", function(){
-    resultado6.textContent= `Produto Selecionado ${produto}`
+produtos.addEventListener("click", function(event){
+    resultado6.target.textContent= `Produto Selecionado ${produtos.value}`
 })
