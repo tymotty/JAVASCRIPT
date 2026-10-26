@@ -218,3 +218,16 @@ produtos.addEventListener("click", function(event){
     resultado6.target.textContent= `Produto Selecionado ${produtos.value}`
 })
 
+
+const resultado7 = document.querySelector("#resultado")
+const botao7= document.querySelector("#botao")
+const nome = document.querySelector("#nome")
+botao7.addEventListener("click", function(){
+    resultado7.textContent = `Olá, ${nome.value}! `
+})
+
+const resultado8= document.querySelector("#resultado")
+const preco1 = document.querySelector("#preco")
+preco1.addEventListener("input", function(){
+    resultado8.textContent = `Preco digitado: R$ ${preco1.value}`
+})
