@@ -231,3 +231,30 @@ const preco1 = document.querySelector("#preco")
 preco1.addEventListener("input", function(){
     resultado8.textContent = `Preco digitado: R$ ${preco1.value}`
 })
+
+const resultado9= document.querySelector("#resultado")
+const linguagem2 = document.querySelector("#linguagem")
+linguagem2.addEventListener("change", function(){
+    resultado9.textContent = `Linguagem escolhida: ${linguagem2.value}`
+})
+
+const resultado10 = document.querySelector("#resultado")
+const idade = document.querySelector("#idade")
+const botao8 = document.querySelector("#verificar")
+botao8.addEventListener("click", function(){
+    if(idade.value>=18){
+        resultado10.textContent = 'Você é maior de idade'
+    }
+    else {
+        resultado10.textContent = "Você é menor de idade"
+    }
+})
+
+const resultado11 = document.querySelector("#resultado")
+const formulario2 = document.querySelector("#formulario")
+const nome4= document.querySelector("#nome")
+
+formulario2.addEventListener("submit", function(event){
+    event.preventDefault()
+    resultado11.textContent = `Bem-vindo, ${nome4.value}!`
+} )
