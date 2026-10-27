@@ -221,3 +221,65 @@ const produtoSemEstoque = produtos.find((item)=>{
 })
 
 const produtoSemEstoqueCaro = produtos.find(produto => produto.estoque === 0 && produto.preco > 250);
+
+//01
+const pontosJogo = [40, 75, 90, 120];
+//Use map para criar pontosBonus, somando 15 pontos em cada valor, mas sem passar de 100.
+//Use forEach para exibir cada um como "Pontos: X".
+const pontosBonus = pontosJogo.map((item)=>{
+  let ponto = item + 15
+if (ponto > 100){
+   return ponto = 100
+} else {
+  return ponto
+}
+})
+console.log(pontosBonus)
+
+//02
+const livros = [
+  { titulo: "Dom Casmurro", paginas: 250, lido: true, temas: ["romance", "classico"] },
+  { titulo: "Clean Code", paginas: 420, lido: false, temas: ["programacao", "tecnico"] },
+  { titulo: "O Hobbit", paginas: 310, lido: false, temas: ["fantasia", "aventura"] },
+  { titulo: "Redes de Computadores", paginas: 600, lido: false, temas: ["tecnico", "redes"] },
+  { titulo: "Memórias Póstumas", paginas: 200, lido: true, temas: ["romance", "classico"] }
+];
+//Monte um array com os títulos em maiúsculas dos livros não lidos que tenham o tema "tecnico" ou "fantasia" e mais de 300 páginas.
+//Encontre o primeiro livro lido com mais de 300 páginas. Se não existir, exiba "Nenhum livro encontrado".
+
+// 02.1 Filtrando e mapeando os títulos
+const livrosFiltrados = livros
+  .filter((item) => {return item.paginas > 300 && !item.lido && (item.temas.includes("tecnico") || item.temas.includes("fantasia"))})
+  .map((item) => {return item.titulo.toUpperCase()})
+
+// 2.2 Encontrando o primeiro livro lido com mais de 300 páginas
+const livroIdeal = livros.find((item) => {
+  return item.paginas > 300 && item.lido;
+});
+
+if (livroIdeal) {
+  console.log(livroIdeal);
+} else {
+  console.log("Nenhum livro encontrado");
+}
+
+const pedidos = [
+  { id: 1, cliente: "Nina", itens: [{ nome: "Mouse", preco: 80 }, { nome: "Teclado", preco: 150 }], pago: true },
+  { id: 2, cliente: "Otto", itens: [{ nome: "Monitor", preco: 900 }], pago: false },
+  { id: 3, cliente: "Pri", itens: [{ nome: "Cabo", preco: 20 }, { nome: "Hub", preco: 60 }], pago: true },
+  { id: 4, cliente: "Quim", itens: [{ nome: "Notebook", preco: 3500 }], pago: true }
+];
+//Monte um array com o id dos pedidos pagos que tenham pelo menos um item com preço maior que 100. (Pense em qual método de array responde “existe algum item que...?”. Você já viu um parecido.)
+const idsPedidosPagos = pedidos
+  .filter(pedido => pedido.pago && pedido.itens.some(item => item.preco > 100))
+  .map(pedido => pedido.id);
+
+console.log(idsPedidosPagos);
+
+const pedidoOtto = pedidos.find(pedido => !pedido.pago && pedido.cliente === "Otto");
+
+if (pedidoOtto) {
+  console.log(pedidoOtto.id);
+} else {
+  console.log("Pedido não encontrado");
+}
