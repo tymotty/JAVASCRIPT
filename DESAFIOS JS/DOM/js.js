@@ -10,7 +10,7 @@ const descricoes = document.querySelectorAll(".descricao")
 
 const precos = document.querySelectorall(".preco")
 const comprar = document.querySelector("#comprar")
-const botoes = document.querySelectorAll( "button")
+const botoes2 = document.querySelectorAll( "button")
 
 
 
@@ -260,3 +260,14 @@ formulario2.addEventListener("submit", function(event){
 } )
 
 
+const botoes = document.querySelectorAll("button")
+const resultado12 = document.querySelector("#resultado")
+
+botoes.forEach(function(botao) {
+    botao.addEventListener("click", function(event) {
+        resultado12.textContent = `Curso selecionado: ${event.target.textContent}`
+    })
+})
+
+const botoes1 = document.querySelectorAll("button")
+const ressultado13 = document.querySelector("#resultado")
