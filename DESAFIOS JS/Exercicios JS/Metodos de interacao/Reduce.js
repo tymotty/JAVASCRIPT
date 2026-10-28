@@ -497,3 +497,71 @@ const mediaMaior7 = notas.reduce((acc,item)=>{
 console.log(mediaMaior7)
 
 //36
+
+
+
+
+//01-reduce
+const matriculas = [
+  { aluno: "Rafa", mensalidade: 300, ativa: true },
+  { aluno: "Sara", mensalidade: 450, ativa: false },
+  { aluno: "Tito", mensalidade: 350, ativa: true },
+  { aluno: "Uma", mensalidade: 500, ativa: true }
+];
+
+const mensalidadeTotal = matriculas.reduce((acc,atual)=>{
+  return acc+atual.mensalidade 
+},0)
+
+console.log(mensalidadeTotal)
+//02-Reduce
+//Com reduce, calcule o valor total do estoque (preço × quantidade de cada produto, somados). Resultado esperado: 240.
+const estoqueLoja = [
+  { produto: "Lápis", preco: 2, qtd: 50 },
+  { produto: "Borracha", preco: 3, qtd: 20 },
+  { produto: "Régua", preco: 8, qtd: 10 }
+];
+const valorTotal = estoqueLoja.reduce((acc,atual)=>{
+  return acc + (atual.preco * atual.qtd)
+  
+},0)
+console.log(valorTotal)
+
+//03
+//Com reduce, monte um objeto contando quantas vezes cada resposta aparece. 
+const respostas = ["sim", "nao", "sim", "talvez", "nao", "sim", "sim"];
+
+
+const respostasTotais = respostas.reduce((acc,atual)=>{
+  if(!acc[atual]){
+    acc[atual] = 1
+  }else{
+    acc[atual] ++
+  }
+  return acc
+},[])
+console.log(respostasTotais)
+
+//04
+//Considerando apenas as viagens concluídas, monte um objeto com o total de km por motorista.
+
+const viagens = [
+  { motorista: "Vera", km: 120, concluida: true },
+  { motorista: "Wagner", km: 80, concluida: false },
+  { motorista: "Vera", km: 60, concluida: true },
+  { motorista: "Xavier", km: 200, concluida: true },
+  { motorista: "Wagner", km: 90, concluida: true }
+];
+
+const viagensConcluidas = viagens.filter((item)=>{
+  return item.concluida
+})
+const kmTotal = viagensConcluidas.reduce((acc,atual)=>{
+  if(!acc[atual.motorista]){
+    acc[atual.motorista] = atual.km
+  }else{
+    acc[atual.motorista] += atual.km
+  }
+  return acc
+},[])
+console.log(kmTotal)

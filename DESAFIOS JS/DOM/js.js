@@ -271,3 +271,5 @@ botoes.forEach(function(botao) {
 
 const botoes1 = document.querySelectorAll("button")
 const ressultado13 = document.querySelector("#resultado")
+
+
