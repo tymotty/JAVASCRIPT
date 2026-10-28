@@ -269,7 +269,69 @@ botoes.forEach(function(botao) {
     })
 })
 
-const botoes1 = document.querySelectorAll("button")
-const ressultado13 = document.querySelector("#resultado")
 
 
+
+//Selecione #cursos e #resultado.
+//Use apenas um addEventListener("click", ...), registrado na div.
+//Use event.target.textContent para mostrar o curso selecionado.
+//Não use querySelectorAll() nem forEach().
+
+const cursos = document.querySelector("#cursos")
+const resultado14 = document.querySelector("#resultado")
+
+cursos.addEventListener("click", function(event){
+  resultado14.textContent =   event.target.textContent
+})
+
+
+
+const lista = document.querySelector("#produtos")
+const produto6 = document.createElement("li")
+produto6.textContent="Teclado"
+lista.append(produto6)
+
+
+const lista1 = document.querySelector("#produtos")
+
+const produtoTeclado = document.createElement("li")
+produtoTeclado.textContent="Teclado"
+const produtoMouse = document.createElement("li")
+produtoMouse.textContent="Mouse"
+const produtoMonitor = document.createElement("li")
+produtoMonitor.textContent="Monitor"
+
+lista1.append(produtoTeclado, produtoMouse, produtoMonitor)
+
+const sql = document.querySelector("#tarefa2")
+sql.remove()
+
+
+const tarefa = document.querySelector("#tarefa")
+const botaoADD = document.querySelector("#adicionar")
+const lista2 = document.querySelector("#lista")
+
+botaoADD.addEventListener("click", function() {
+    const tarefaAdd = document.createElement("li")
+    tarefaAdd.textContent = tarefa.value
+    lista2.append(tarefaAdd)
+})
+
+const tarefa1 = document.querySelector("#tarefa")
+const botaoADD2 = document.querySelector("#adicionar")
+const lista3 = document.querySelector("#lista")
+
+botaoADD2.addEventListener("click", function() {
+    const tarefaAdd2 = document.createElement("li")
+    tarefaAdd2.textContent = tarefa1.value
+
+    const botaoRemover = document.createElement("button")
+    botaoRemover.textContent = "Excluir"
+
+    botaoRemover.addEventListener("click", function() {
+        tarefaAdd2.remove()
+    })
+
+    tarefaAdd2.append(botaoRemover)
+    lista3.append(tarefaAdd2)
+})
