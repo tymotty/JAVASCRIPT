@@ -380,3 +380,33 @@ botaoADD2.addEventListener("click", function() {
         console.log("É preciso escrever uma tarefa")
     }
 })
+
+const formulario3 = document.querySelector("#formulario")
+const email2 = document.querySelector("#email")
+
+formulario3.addEventListener("submit", function(event) {
+    event.preventDefault()
+
+    if (email2.checkValidity()) {
+        console.log("Email válido")
+    } else {
+        console.log("Email inválido")
+    }
+})
+
+const formulario4 = document.querySelector("#formulario")
+const email3 = document.querySelector("#email")
+
+formulario4.addEventListener("submit", function(event) {
+    event.preventDefault()
+
+    email3.setCustomValidity("")
+
+    if (!email3.value.trim()) {
+        email3.setCustomValidity("O e-mail é obrigatório")
+    } else if (!email3.checkValidity()) {
+        email3.setCustomValidity("Digite um e-mail válido")
+    } else {
+        console.log("E-mail válido")
+    }
+})
