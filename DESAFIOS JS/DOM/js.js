@@ -410,3 +410,71 @@ formulario4.addEventListener("submit", function(event) {
         console.log("E-mail válido")
     }
 })
+
+const tarefa9 = document.querySelector("#tarefa")
+const botaoADD9 = document.querySelector("#adicionar")
+const lista9 = document.querySelector("#lista")
+
+// Variável para guardar a referência do texto da tarefa que está sendo editada
+let tarefaEmEdicao2 = null
+
+botaoADD2.addEventListener("click", function() {
+    const textoTarefa = tarefa1.value.trim()
+
+    if (textoTarefa !== "") {
+        // Se estamos editando uma tarefa existente
+        if (tarefaEmEdicao !== null) {
+            tarefaEmEdicao.textContent = textoTarefa // Atualiza o texto
+            tarefaEmEdicao = null                   // Limpa o estado de edição
+            tarefa1.value = ""                      // Limpa o input
+            return                                  // Interrompe para não criar nova tarefa
+        }
+
+        // Criando nova tarefa
+        const tarefaAdd2 = document.createElement("li")
+
+        // Usamos um span para separar o texto dos botões
+        const spanTexto = document.createElement("span")
+        spanTexto.textContent = textoTarefa
+
+        // btn editar
+        const botaoEditar = document.createElement("button")
+        botaoEditar.textContent = "Editar"
+        botaoEditar.addEventListener("click", function(){
+            tarefa1.value = spanTexto.textContent
+            tarefaEmEdicao = spanTexto // Marca este span como o alvo da edição
+            tarefa1.focus()            // Opcional: joga o cursor direto para o input
+        })
+
+        // btn remover
+        const botaoRemover = document.createElement("button")
+        botaoRemover.textContent = "Excluir"
+        botaoRemover.addEventListener("click", function() {
+            tarefaAdd2.remove()
+            // Se a tarefa que estava sendo editada for excluída, cancela o modo de edição
+            if (tarefaEmEdicao === spanTexto) {
+                tarefaEmEdicao = null
+                tarefa1.value = ""
+            }
+        })
+
+        // btn concluido
+        const botaoConcluido = document.createElement("button")
+        botaoConcluido.textContent = "Concluido"
+        botaoConcluido.addEventListener("click", function(){
+            if(tarefaAdd2.style.textDecoration === "line-through"){
+                tarefaAdd2.style.textDecoration = "none"
+            } else {
+                tarefaAdd2.style.textDecoration = "line-through"
+            }
+        })
+
+        // juncao (incluindo o span e o botão de editar)
+        tarefaAdd2.append(spanTexto, botaoEditar, botaoRemover, botaoConcluido)
+        lista3.append(tarefaAdd2)
+
+        tarefa1.value = ""
+    } else {
+        console.log("É preciso escrever uma tarefa")
+    }
+})
