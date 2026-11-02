@@ -478,3 +478,39 @@ botaoADD2.addEventListener("click", function() {
         console.log("É preciso escrever uma tarefa")
     }
 })
+
+const formulario = document.querySelector("#formulario")
+const email = document.querySelector("#email")
+const mensagem = document.querySelector("#mensagem")
+
+// Validação em tempo real
+email.addEventListener("input", function() {
+
+    // Limpa erros personalizados anteriores
+    email.setCustomValidity("")
+
+    if (email.value.trim() === "") {
+        mensagem.textContent = ""
+    }
+    else if (!email.checkValidity()) {
+        mensagem.textContent = "E-mail inválido"
+    }
+    else {
+        mensagem.textContent = "Formato de e-mail válido!"
+    }
+})
+
+// Envio do formulário
+formulario.addEventListener("submit", function(event) {
+    event.preventDefault()
+
+    email.setCustomValidity("")
+
+    if (!email.checkValidity()) {
+        email.setCustomValidity("Digite um e-mail válido")
+        email.reportValidity()
+    }
+    else {
+        mensagem.textContent = "Cadastro realizado com sucesso!"
+    }
+})
