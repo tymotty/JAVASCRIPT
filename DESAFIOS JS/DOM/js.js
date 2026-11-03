@@ -479,20 +479,20 @@ botaoADD2.addEventListener("click", function() {
     }
 })
 
-const formulario = document.querySelector("#formulario")
-const email = document.querySelector("#email")
+const formulario8 = document.querySelector("#formulario")
+const email8 = document.querySelector("#email")
 const mensagem = document.querySelector("#mensagem")
 
 // Validação em tempo real
-email.addEventListener("input", function() {
+email8.addEventListener("input", function() {
 
     // Limpa erros personalizados anteriores
-    email.setCustomValidity("")
+    email8.setCustomValidity("")
 
-    if (email.value.trim() === "") {
+    if (email8.value.trim() === "") {
         mensagem.textContent = ""
     }
-    else if (!email.checkValidity()) {
+    else if (!email8.checkValidity()) {
         mensagem.textContent = "E-mail inválido"
     }
     else {
@@ -501,14 +501,14 @@ email.addEventListener("input", function() {
 })
 
 // Envio do formulário
-formulario.addEventListener("submit", function(event) {
+formulario8.addEventListener("submit", function(event) {
     event.preventDefault()
 
-    email.setCustomValidity("")
+    email8.setCustomValidity("")
 
-    if (!email.checkValidity()) {
-        email.setCustomValidity("Digite um e-mail válido")
-        email.reportValidity()
+    if (!email8.checkValidity()) {
+        email8.setCustomValidity("Digite um e-mail válido")
+        email8.reportValidity()
     }
     else {
         mensagem.textContent = "Cadastro realizado com sucesso!"
