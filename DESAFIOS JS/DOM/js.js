@@ -514,3 +514,17 @@ formulario8.addEventListener("submit", function(event) {
         mensagem.textContent = "Cadastro realizado com sucesso!"
     }
 })
+
+const formulario5 = document.querySelector("#formularioCadastro")
+const nome9 = document.querySelector("#nome")
+const senha5 = document.querySelector("#senha")
+const mensagemSenha = document.querySelector("#mensagemSenha")
+const resultado15 = document.querySelector("#resultado")
+
+
+nome9.addEventListener("input", function(event){
+
+    if (nome9.value.trim() === "") {
+        resultado15.textContent ="Nome invalido"
+    }
+})
