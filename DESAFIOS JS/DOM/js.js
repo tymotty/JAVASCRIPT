@@ -528,3 +528,7 @@ nome9.addEventListener("input", function(event){
         resultado15.textContent ="Nome invalido"
     }
 })
+
+
+const titulo2 = document.querySelector("#titulo")
+const descricao = document.querySelector("#")
