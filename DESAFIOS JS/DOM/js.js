@@ -529,6 +529,31 @@ nome9.addEventListener("input", function(event){
     }
 })
 
+const titulo7 = document.querySelector("#titulo")
+const botoesProdutos = document.querySelectorAll(".produto")
+const descricao10 = document.querySelector("#descricao")
 
-const titulo2 = document.querySelector("#titulo")
-const descricao = document.querySelector("#")
+titulo7.textContent = "Produtos disponíveis"
+
+
+botoesProdutos.forEach((item) =>{
+  addEventListener("click",function(){
+    descricao10.textContent = `Produto selecionado: ${item.textContent}`
+  })
+})
+
+const titulo11 = document.querySelector("#titulo")
+const inputTarefa = document.querySelector("#tarefa")
+const botaoAdicionar = document.querySelector("#adicionar")
+const lista8 = document.querySelector("#lista")
+const contador6 = document.querySelector("#contador")
+
+botaoAdicionar.addEventListener("click", function(){
+    if(inputTarefa.value.trim() !== ""){
+        const tarefa2 = document.createElement("li")
+        tarefa2.textContent = inputTarefa.value
+        lista8.append(tarefa2)
+        contador6.textContent = `Tarefas: ${lista8.children.length}`
+        inputTarefa.value = ""
+    } 
+})
