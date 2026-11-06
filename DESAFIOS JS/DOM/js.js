@@ -557,3 +557,30 @@ botaoAdicionar.addEventListener("click", function(){
         inputTarefa.value = ""
     } 
 })
+////////////////////////////////////////////////////////////////////////////////////
+//01
+// SELETORES
+// 1. FAVORITAR PRODUTO
+// Ao clicar em Favoritar:
+// - Adicione a classe "favorito" ao elemento produto.
+// - Altere o texto do botão para "Remover dos favoritos".
+// - Se clicar novamente, remova a classe e restaure o texto original.
+
+
+// 2. DESATIVAR PRODUTO
+// Ao clicar em Desativar:
+// - Adicione o atributo "disabled" ao botãoFavoritar usando setAttribute().
+// - Altere o texto do botãoDesativar para "Produto desativado".
+
+
+// 3. VERIFICAR ATRIBUTOS
+// - Utilize getAttribute() para verificar o atributo "disabled".
+// - Utilize removeAttribute() para reativar o botãoFavoritar.
+// - Implemente também a possibilidade de reativar o produto.
+
+const titulo = document.querySelector("#titulo")
+const produto5 = document.querySelector("#produto")
+const nome5 = document.querySelector("#nome")
+const botaoFavoritar = document.querySelector("#favoritar")
+const botaoDesativar = document.querySelector("#desativar")
+
