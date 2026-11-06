@@ -584,3 +584,6 @@ const nome5 = document.querySelector("#nome")
 const botaoFavoritar = document.querySelector("#favoritar")
 const botaoDesativar = document.querySelector("#desativar")
 
+botaoFavoritar.addEventListener("click", function(){
+    
+})
