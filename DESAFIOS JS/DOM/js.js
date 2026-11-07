@@ -560,30 +560,47 @@ botaoAdicionar.addEventListener("click", function(){
 ////////////////////////////////////////////////////////////////////////////////////
 //01
 // SELETORES
+const titulo = document.querySelector("#titulo")
+const produto5 = document.querySelector("#produto")
+const nome5 = document.querySelector("#nome")
+const botaoFavoritar = document.querySelector("#favoritar")
+const botaoDesativar = document.querySelector("#desativar")
 // 1. FAVORITAR PRODUTO
 // Ao clicar em Favoritar:
 // - Adicione a classe "favorito" ao elemento produto.
 // - Altere o texto do botão para "Remover dos favoritos".
 // - Se clicar novamente, remova a classe e restaure o texto original.
 
+botaoFavoritar.addEventListener("click", function(){
+    if (!produto5.classList.contains("favorito")){
+        produto5.classList.toggle("favorito")
+        botaoFavoritar.textContent ="Remover dos favoritos"
+        produto5.style.opacity = "0.5"
+    }else{
+        produto5.classList.toggle("favorito")
+        botaoFavoritar.textContent ="Favoritar"
+        produto5.style.opacity = "1"
+    }
+})
 
 // 2. DESATIVAR PRODUTO
 // Ao clicar em Desativar:
 // - Adicione o atributo "disabled" ao botãoFavoritar usando setAttribute().
 // - Altere o texto do botãoDesativar para "Produto desativado".
 
+botaoDesativar.addEventListener("click", function(){
+        if (botaoFavoritar.getAttribute("disabled") !== null) {
+        botaoFavoritar.removeAttribute("disabled")
+        botaoDesativar.textContent = "Desativar produto"
+
+    } else {
+        botaoFavoritar.setAttribute("disabled", "")
+        botaoDesativar.textContent = "Produto desativado"
+    }
+})
 
 // 3. VERIFICAR ATRIBUTOS
 // - Utilize getAttribute() para verificar o atributo "disabled".
 // - Utilize removeAttribute() para reativar o botãoFavoritar.
 // - Implemente também a possibilidade de reativar o produto.
 
-const titulo = document.querySelector("#titulo")
-const produto5 = document.querySelector("#produto")
-const nome5 = document.querySelector("#nome")
-const botaoFavoritar = document.querySelector("#favoritar")
-const botaoDesativar = document.querySelector("#desativar")
-
-botaoFavoritar.addEventListener("click", function(){
-    
-})
