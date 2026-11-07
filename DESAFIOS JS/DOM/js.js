@@ -604,3 +604,18 @@ botaoDesativar.addEventListener("click", function(){
 // - Utilize removeAttribute() para reativar o botãoFavoritar.
 // - Implemente também a possibilidade de reativar o produto.
 
+
+const email = document.querySelector("#email")
+const botaoEnviar = document.querySelector("#enviar")
+
+// 1. Utilize setAttribute() para adicionar o atributo required ao input.
+
+// 2. Altere o placeholder para "Informe seu e-mail".
+
+// 3. Utilize getAttribute() para obter o valor do placeholder
+// e armazene o resultado em uma variável.
+
+// 4. Utilize getAttribute() para verificar se o atributo required existe.
+// Armazene o resultado em outra variável.
+
+// 5. Exiba os dois resultados utilizando console.log().
