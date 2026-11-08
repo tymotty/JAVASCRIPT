@@ -605,7 +605,7 @@ botaoDesativar.addEventListener("click", function(){
 // - Implemente também a possibilidade de reativar o produto.
 
 
-const email = document.querySelector("#email")
+const email6 = document.querySelector("#email")
 const botaoEnviar = document.querySelector("#enviar")
 
 // 1. Utilize setAttribute() para adicionar o atributo required ao input.
@@ -619,3 +619,59 @@ const botaoEnviar = document.querySelector("#enviar")
 // Armazene o resultado em outra variável.
 
 // 5. Exiba os dois resultados utilizando console.log().
+const email = document.querySelector("#email")
+
+// Altera o placeholder
+email.setAttribute("placeholder", "Informe seu e-mail")
+
+// Adiciona o atributo required
+email.setAttribute("required", "")
+
+// Altera o tipo do input
+email.setAttribute("type", "text")
+
+const placeholder = email.getAttribute("placeholder")
+
+console.log(placeholder)
+
+const resultado = email.getAttribute("disabled")
+
+console.log(resultado)
+
+const botao = document.querySelector("#comprar")
+
+// Adiciona o atributo
+botao.setAttribute("disabled", "")
+
+// Consulta o atributo
+console.log(botao.getAttribute("disabled"))
+
+
+const usuario = document.querySelector("#usuario")
+const confirmar = document.querySelector("#confirmar")
+
+// EXERCÍCIO 1
+// Utilize setAttribute() para adicionar o atributo required ao input.
+
+
+// EXERCÍCIO 2
+// Utilize setAttribute() para alterar o placeholder para
+// "Usuário obrigatório".
+
+
+// EXERCÍCIO 3
+// Utilize getAttribute() para obter o valor do placeholder.
+// Armazene o resultado em uma variável.
+
+
+// EXERCÍCIO 4
+// Utilize getAttribute() para consultar o atributo required.
+// Armazene o resultado em outra variável.
+
+
+// EXERCÍCIO 5
+// Exiba as duas variáveis utilizando console.log().
+
+
+// EXERCÍCIO 6
+// Utilize setAttribute() para alterar o type do input de text para password.
