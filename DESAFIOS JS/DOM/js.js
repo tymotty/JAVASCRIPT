@@ -650,28 +650,3 @@ console.log(botao.getAttribute("disabled"))
 const usuario = document.querySelector("#usuario")
 const confirmar = document.querySelector("#confirmar")
 
-// EXERCÍCIO 1
-// Utilize setAttribute() para adicionar o atributo required ao input.
-
-
-// EXERCÍCIO 2
-// Utilize setAttribute() para alterar o placeholder para
-// "Usuário obrigatório".
-
-
-// EXERCÍCIO 3
-// Utilize getAttribute() para obter o valor do placeholder.
-// Armazene o resultado em uma variável.
-
-
-// EXERCÍCIO 4
-// Utilize getAttribute() para consultar o atributo required.
-// Armazene o resultado em outra variável.
-
-
-// EXERCÍCIO 5
-// Exiba as duas variáveis utilizando console.log().
-
-
-// EXERCÍCIO 6
-// Utilize setAttribute() para alterar o type do input de text para password.
