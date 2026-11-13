@@ -650,3 +650,105 @@ console.log(botao.getAttribute("disabled"))
 const usuario = document.querySelector("#usuario")
 const confirmar = document.querySelector("#confirmar")
 
+
+
+const produto9 = document.querySelector("#produto")
+const preco9 = document.querySelector("#preco")
+const cadastrar = document.querySelector("#cadastrar")
+const resultado = document.querySelector("#resultado")
+const erro = document.querySelector("#erro")
+
+// 1. Adicione um evento de clique ao botão.
+cadastrar.addEventListener("click", function(){
+    // 2. Capture o nome do produto e o preço digitados.
+    
+    // 3. Utilize trim() para remover espaços desnecessários
+    // do início e do final do nome.
+    const nomeProduto = produto9.value.trim()
+    const valorPreco = preco9.value
+    if(nomeProduto === "" || valorPreco ===""){
+        // 4. Se algum dos campos estiver vazio, mostre
+        // uma mensagem de erro utilizando textContent.
+        erro.textContent ="Erro, campos nao preenchidos "
+    } else {
+        // 5. Caso estejam preenchidos, crie um elemento HTML
+        // contendo o nome e o preço do produto.
+        const PrecoProduto = document.createElement("p")
+        PrecoProduto.textContent =`Produto: ${nomeProduto} Valor: ${valorPreco}`
+        // 6. Insira esse elemento dentro de resultado.
+        resultado.append(PrecoProduto)
+        // 7. Após cadastrar, limpe os dois campos utilizando value.
+        produto9.value= ""
+        preco9.value = ""
+        erro.textContent =""
+    }
+})
+
+
+const produto8 = document.querySelector("#produto")
+const favoritar = document.querySelector("#favoritar")
+const status = document.querySelector("#status")
+
+favoritar.addEventListener("click", function() {
+
+    // 1. Verifique se o produto já possui a classe "favorito".
+    if(!produto8.classList.contains("favorito")){
+        // 2. Se não possuir:
+        // - Adicione a classe "favorito".
+        produto8.classList.add("favorito")
+        // - Altere o texto do botão para "Remover dos favoritos".
+        favoritar.textContent ="Remover dos favoritos"
+        // - Atualize o status para "Este produto é favorito."
+        status.textContent ="Este produto é favorito."
+    }else{
+        // 3. Se já possuir:
+        // - Remova a classe "favorito".
+        produto8.classList.remove("favorito")
+        // - Altere o texto do botão para "Adicionar aos favoritos".
+        favoritar.textContent ="Adicionar aso favoritos"
+        // - Atualize o status para "Este produto não é favorito."
+        status.textContent ="Este prodoto nao é favorito"
+    }
+})
+
+
+const produto6 = document.querySelector("#produto")
+const disponibilidade = document.querySelector("#disponibilidade")
+const mensagem = document.querySelector("#mensagem")
+
+disponibilidade.addEventListener("click", function() {
+
+    // 1. Verifique se o botão possui o atributo "disabled".
+    if(disponibilidade.classList.contains("disabled")){
+        // 2. Se possuir:
+        // - Remova o atributo "disabled".
+        disponibilidade.classList.remove("disabled")
+        // - Adicione a classe "disponivel" ao produto.
+        produto6.classList.add("disponivel")
+        // - Altere o texto do botão para "Disponível".
+        disponibilidade.textContent = "Disponível"
+        // - Atualize a mensagem para "Produto disponível.".
+        mensagem.textContent = "Produto Disponível"
+    }else {
+        // 3. Se não possuir:
+        // - Adicione o atributo "disabled".
+        disponibilidade.classList.add("disabled")
+        // - Remova a classe "disponivel".
+        produto6.classList.remove("disponivel")
+        // - Altere o texto do botão para "Indisponível".
+        disponibilidade.textContent="Indisponível"
+        // - Atualize a mensagem para "Produto indisponível.".
+        mensagem.textContent ="Produto indisponível."
+    }
+
+    if(disponibilidade.classList.contains("disponível")){
+        // 4. Quando estiver disponível, altere a cor do texto
+        // da mensagem para verde usando element.style.
+        
+    }
+
+    // 5. Quando estiver indisponível, altere a cor
+    // do texto da mensagem para vermelho.
+
+})
+
