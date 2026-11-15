@@ -619,32 +619,7 @@ const botaoEnviar = document.querySelector("#enviar")
 // Armazene o resultado em outra variável.
 
 // 5. Exiba os dois resultados utilizando console.log().
-const email = document.querySelector("#email")
 
-// Altera o placeholder
-email.setAttribute("placeholder", "Informe seu e-mail")
-
-// Adiciona o atributo required
-email.setAttribute("required", "")
-
-// Altera o tipo do input
-email.setAttribute("type", "text")
-
-const placeholder = email.getAttribute("placeholder")
-
-console.log(placeholder)
-
-const resultado = email.getAttribute("disabled")
-
-console.log(resultado)
-
-const botao = document.querySelector("#comprar")
-
-// Adiciona o atributo
-botao.setAttribute("disabled", "")
-
-// Consulta o atributo
-console.log(botao.getAttribute("disabled"))
 
 
 const usuario = document.querySelector("#usuario")
@@ -801,3 +776,27 @@ const alterar2 = produto2.querySelector(".btn-status");
 
 
 // 4. Faça o botão alterar1 executar essa função ao ser clicado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////
+
+
+
+
+
+
+
