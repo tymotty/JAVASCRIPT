@@ -677,7 +677,7 @@ cadastrar.addEventListener("click", function(){
         PrecoProduto.textContent =`Produto: ${nomeProduto} Valor: ${valorPreco}`
         // 6. Insira esse elemento dentro de resultado.
         resultado.append(PrecoProduto)
-        // 7. Após cadastrar, limpe os dois campos utilizando value.
+   dddds     // 7. Após cadastrar, limpe os dois campos utilizando value.
         produto9.value= ""
         preco9.value = ""
         erro.textContent =""
@@ -744,7 +744,7 @@ disponibilidade.addEventListener("click", function() {
     if(disponibilidade.classList.contains("disponível")){
         // 4. Quando estiver disponível, altere a cor do texto
         // da mensagem para verde usando element.style.
-        
+         
     }
 
     // 5. Quando estiver indisponível, altere a cor
@@ -752,3 +752,52 @@ disponibilidade.addEventListener("click", function() {
 
 })
 
+const produto7 = document.querySelector("#produto1");
+const produto6 = document.querySelector("#produto2");
+
+const status3 = produto1.querySelector(".status");
+const status4 = produto2.querySelector(".status");
+
+const comprar1 = produto1.querySelector(".btn-comprar");
+const comprar2 = produto2.querySelector(".btn-comprar");
+
+const alterar1 = produto1.querySelector(".btn-status");
+const alterar2 = produto2.querySelector(".btn-status");
+
+
+// EXERCÍCIO 1 — CONTROLE DE DISPONIBILIDADE
+
+// 1. Inicialmente, o produto1 deve ficar indisponível.
+
+// - Adicione a classe "indisponivel" ao produto1.
+// - Desabilite seu botão de compra utilizando disabled.
+// - Altere o texto do status para "Produto indisponível".
+// - Altere a cor do texto do status para vermelho.
+// - Altere a opacidade do produto para 0.5.
+
+
+// 2. O produto2 deve permanecer disponível.
+
+// - Garanta que o botão de compra esteja habilitado.
+// - O status deve exibir "Produto disponível".
+
+
+// 3. Crie uma função para alterar a disponibilidade do produto1.
+
+// Quando chamada:
+// - Se estiver indisponível, torne-o disponível.
+// - Remova a classe "indisponivel".
+// - Habilite o botão de compra.
+// - Atualize a mensagem para "Produto disponível".
+// - Altere a cor do status para verde.
+// - Restaure a opacidade para 1.
+
+// Caso esteja disponível:
+// - Adicione a classe "indisponivel".
+// - Desabilite o botão de compra.
+// - Atualize a mensagem para "Produto indisponível".
+// - Altere a cor do status para vermelho.
+// - Altere a opacidade para 0.5.
+
+
+// 4. Faça o botão alterar1 executar essa função ao ser clicado.
