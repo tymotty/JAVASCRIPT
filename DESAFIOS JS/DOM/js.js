@@ -800,3 +800,55 @@ const alterar2 = produto2.querySelector(".btn-status");
 
 
 
+// 1. Selecione o h1 pelo id "tituloPagina" e guarde em uma variável
+// 2. Troque o texto dele para "Bem-vindo ao Patrium"
+
+// 3. Selecione o parágrafo pela classe "descricaoLoja" e guarde em uma variável
+// 4. Troque o texto dele para "Organize suas finanças do seu jeito"
+
+// 5. Selecione o input "campoNome" e o parágrafo "resultadoNome"
+// 6. Leia o valor que está dentro do input
+// 7. Coloque no parágrafo "resultadoNome" o texto: "Olá, Maria!"
+//    (o nome deve vir do input, não escrito direto no código)
+
+// Regras: use querySelector e textContent (sem innerHTML)
+// Dica de nomes: use variáveis diferentes das de outros exercícios
+//    para evitar conflito se estiver tudo no mesmo arquivo
+
+const titulo = document.querySelector("#tituloPagina")
+titulo.textContent = "Bem-vindo ao Patrium"
+
+const descricao1 = document.querySelector(".descricaoLoja")
+descricao1.textContent ="Organize suas finanças do seu jeito"
+
+const campoNome = document.querySelector("#campoNome")
+const resultadoNome = document.querySelector("#resultadoNome")
+resultadoNome.textContent = `Olá, ${campoNome.value}!`
+
+
+
+
+// 1. Selecione TODOS os elementos com a classe "itemGasto" e guarde em uma variável
+// 2. Mostre no console quantos itens foram encontrados
+
+// 3. Percorra todos os itens com forEach e coloque o número da posição
+//    antes do texto. Exemplo: "1 - Mercado", "2 - Internet", "3 - Transporte"
+//    (use o texto que já existe no item, não reescreva os nomes)
+
+// 4. Adicione a classe "destaque" apenas no item que tiver o texto
+//    que começa com "Internet" (no texto original, antes de você numerar)
+//    Dica: pense na ordem das operações dentro do forEach
+
+// 5. Selecione o parágrafo "contadorGastos" e escreva nele:
+//    "Total de gastos: 3" (o número deve vir da quantidade de itens, não escrito direto)
+
+// Regras: use querySelectorAll, forEach, textContent e classList
+// Use nomes de variáveis diferentes dos do exercício anterior
+
+
+const itensGastos = document.querySelectorAll(".itemGasto")
+console.log("Como posso fazer ?")
+let contador3 = 0
+itensGastos.forEach((item)=>{
+    console.log(`${contador3+1} - ${item.textContent}`)
+})
