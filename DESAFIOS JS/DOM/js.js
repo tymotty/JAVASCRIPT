@@ -828,6 +828,143 @@ resultadoNome.textContent = `Olá, ${campoNome.value}!`
 
 
 
+
+const titulo = document.querySelector("#titulo")
+const produtos7 = document.querySelectorAll(".produto")
+const botao9= document.querySelector("#cadastrar")
+
+// 1. Mostre o texto do título no console.
+console.log(titulo.textContent)
+// 2. Mostre a quantidade de produtos encontrados.
+console.log(produto7.length)
+// 3. Mostre o texto do botão no console.
+console.log(botao9.textContent)
+// 4. Utilize forEach() para mostrar o nome
+// de cada produto no console.
+produtos7.forEach((item)=>{
+    console.log(item.textContent)
+})
+
+
+const funcionarios = document.querySelectorAll(".funcionario")
+const funcionariosAtivos = document.querySelectorAll('.funcionario[data-status="ativo"]')
+const funcionariosInativos = document.querySelectorAll('.funcionario[data-status="inativo"]')
+
+// 1. Mostre a quantidade total de funcionários.
+console.log(funcionarios.length)
+// 2. Mostre a quantidade de funcionários ativos.
+console.log(funcionariosAtivos.length)
+// 3. Mostre a quantidade de funcionários inativos.
+console.log(funcionariosInativos.length)
+// 4. Utilize forEach() para percorrer todos os funcionários
+// e mostrar o nome e a profissão de cada um.
+funcionarios.forEach((item)=>{
+    console.log(item.querySelector("h2").textContent)
+    console.log(item.querySelector("p").textContent)
+})
+// 5. Utilize forEach() para mostrar somente os nomes
+// dos funcionários ativos.
+funcionariosAtivos.forEach((item)=>{
+    console.log(item.querySelector("h2").textContent)
+})
+
+
+
+
+const equipe = document.querySelector("#equipe")
+
+const funcionarios1 = equipe.querySelectorAll(".funcionario")
+
+const desenvolvedoresAtivos = equipe.querySelectorAll(
+    '.funcionario[data-area="desenvolvimento"][data-status="ativo"]'
+)
+
+const funcionariosNaoInativos = equipe.querySelectorAll(
+    '.funcionario:not([data-status="inativo"])'
+)
+
+const suporte = equipe.querySelectorAll(
+    '.funcionario[data-area="suporte"]'
+)
+
+// 1. Mostre a quantidade total de funcionários.
+console.log(funcionarios1.length)
+// 2. Mostre a quantidade de desenvolvedores ativos.
+console.log(desenvolvedoresAtivos.length)
+// 3. Utilize forEach() para mostrar o nome e o cargo
+// de cada desenvolvedor ativo.
+desenvolvedoresAtivos.forEach((item)=>{
+    console.log(item.querySelector("h2").textContent)
+    console.log(item.querySelector("p").textContent)
+})
+// 4. Utilize forEach() para mostrar os nomes
+// dos funcionários que não estão inativos.
+funcionariosNaoInativos.forEach((item)=>{
+    console.log(item.querySelector("h2").textContent)
+})
+// 5. Utilize forEach() para mostrar o nome
+// e o cargo de cada funcionário da área de suporte.
+suporte.forEach((item)=>{
+    console.log(item.querySelector("h2").textContent)
+    console.log(item.querySelector("p").textContent)
+})
+
+
+
+const titulo = document.querySelector("#titulo")
+const mensagem = document.querySelector("#mensagem")
+const nome6 = document.querySelector("#nome")
+const resultado = document.querySelector("#resultado")
+
+// 1. Mostre o texto do título no console.
+console.log(titulo.textContent)
+// 2. Mostre o conteúdo atual da mensagem.
+console.log(mensagem.textContent)
+// 3. Altere o título para "Gerenciamento de usuários"
+// utilizando textContent.
+titulo.textContent = "Gerenciamento de usuários"
+// 4. Altere a mensagem para "Sistema atualizado com sucesso!"
+// utilizando textContent.
+mensagem.textContent ="Sistema atualizado com sucesso!"
+// 5. Mostre o valor do input nome no console.
+console.log(nome6.value)
+// 6. Altere o valor do input para "Maria Oliveira".
+nome6.value = "Maria Oliveira"
+// 7. Insira dentro de resultado um conteúdo HTML contendo:
+// - Um h2 com o texto "Usuário cadastrado".
+// - Um p com o texto "Cadastro realizado com sucesso!".
+// Utilize innerHTML.
+resultado.innerHTML = "<h2>Usuário cadastrado</h2> <p>Cadastro realizado com sucesso!</p>"
+
+
+const nomeProduto1 = document.querySelector("#nomeProduto")
+const precoProduto = document.querySelector("#precoProduto")
+const mensagem = document.querySelector("#mensagem")
+const resultado = document.querySelector("#resultado")
+
+// 1. Capture o nome e o preço dos inputs.
+
+// 2. Utilize trim() para remover os espaços
+// desnecessários do nome e do preço.
+
+// 3. Verifique se algum dos campos está vazio.
+
+// 4. Caso algum campo esteja vazio:
+// - Mostre "Preencha todos os campos!" em mensagem
+// utilizando textContent.
+// - Não gere o cadastro.
+
+// 5. Caso os campos estejam preenchidos:
+// - Limpe a mensagem anterior.
+// - Utilize innerHTML para inserir:
+//   Um h2 com o nome do produto.
+//   Um p com o preço do produto.
+
+// 6. Após cadastrar, limpe os dois inputs
+// utilizando value.
+
+
+
 // 1. Selecione TODOS os elementos com a classe "itemGasto" e guarde em uma variável
 // 2. Mostre no console quantos itens foram encontrados
 
@@ -851,4 +988,13 @@ console.log("Como posso fazer ?")
 let contador3 = 0
 itensGastos.forEach((item)=>{
     console.log(`${contador3+1} - ${item.textContent}`)
+    if(item.textContent === "Internet"){
+        item.classList.add("destaque")    }
 })
+
+
+
+
+
+
+
