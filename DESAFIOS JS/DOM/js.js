@@ -1,3 +1,5 @@
+const { createElement } = require("react")
+
 const mensagem1 = document.querySelector(".mensagem")
 
 
@@ -967,10 +969,20 @@ const resultado = document.querySelector("#resultado")
 
 // 1. Selecione TODOS os elementos com a classe "itemGasto" e guarde em uma variável
 // 2. Mostre no console quantos itens foram encontrados
+const itensGastos = document.querySelectorAll(".itemGasto")
+console.log(itensGastos.length)
 
 // 3. Percorra todos os itens com forEach e coloque o número da posição
 //    antes do texto. Exemplo: "1 - Mercado", "2 - Internet", "3 - Transporte"
 //    (use o texto que já existe no item, não reescreva os nomes)
+
+
+itensGastos.forEach((item, index)=>{
+    if(item.textContent === "Internet"){
+        item.classList.add("destaque")}
+    item.textContent = `${index +1} - ${item.textContent}`
+    console.log(`${index} - ${item.textContent}`)
+})
 
 // 4. Adicione a classe "destaque" apenas no item que tiver o texto
 //    que começa com "Internet" (no texto original, antes de você numerar)
@@ -978,19 +990,52 @@ const resultado = document.querySelector("#resultado")
 
 // 5. Selecione o parágrafo "contadorGastos" e escreva nele:
 //    "Total de gastos: 3" (o número deve vir da quantidade de itens, não escrito direto)
-
+const contadorGastos = document.querySelector("#contadorGastos")
+contadorGastos.textContent =`Total de gastos:${itensGastos.length}`
 // Regras: use querySelectorAll, forEach, textContent e classList
 // Use nomes de variáveis diferentes dos do exercício anterior
 
 
-const itensGastos = document.querySelectorAll(".itemGasto")
-console.log("Como posso fazer ?")
-let contador3 = 0
-itensGastos.forEach((item)=>{
-    console.log(`${contador3+1} - ${item.textContent}`)
-    if(item.textContent === "Internet"){
-        item.classList.add("destaque")    }
+
+
+// Use este array para montar a lista na página:
+const metasLista = [
+  { titulo: "Reserva de emergência", concluida: false },
+  { titulo: "Pagar cartão", concluida: true },
+  { titulo: "Viagem", concluida: false },
+  { titulo: "Curso de inglês", concluida: true }
+];
+// 1. Selecione o ul "listaMetas" e o parágrafo "mensagemVazia"
+const listaMetas = document.querySelector("#listaMetas")
+const mensagemVazia = document.querySelector("#mensagemVazia")
+
+// 2. Percorra o array metasLista com forEach e, para cada meta:
+//    - crie um elemento li com createElement
+//    - coloque o título da meta como texto do li
+//    - se a meta estiver concluída, adicione a classe "feita" no li
+//    - coloque o li dentro do ul com append
+metasLista.forEach((item)=>{
+    const lista2 = document.createElement("li")
+    lista2.textContent =item.titulo
+    if(item.concluida){
+        lista2.classList.add("feita")
+    }
+    item.append(lista2)
 })
+
+// 3. Depois de montar a lista, remova da página apenas os li
+//    que tiverem a classe "feita"
+//    Dica: use querySelectorAll e o método remove()
+
+
+// 4. Por fim, conte quantos li restaram na lista (consulte a página,
+//    não o array) e escreva em "mensagemVazia":
+//    - se restou pelo menos 1: "Metas pendentes: X"
+//    - se não restou nenhum: "Nenhuma meta pendente"
+
+// Regras: use createElement, append, classList, remove e textContent
+// Não use innerHTML
+// Use nomes de variáveis diferentes dos exercícios anteriores
 
 
 
