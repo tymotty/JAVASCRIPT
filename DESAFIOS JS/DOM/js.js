@@ -939,32 +939,6 @@ nome6.value = "Maria Oliveira"
 resultado.innerHTML = "<h2>Usuário cadastrado</h2> <p>Cadastro realizado com sucesso!</p>"
 
 
-const nomeProduto1 = document.querySelector("#nomeProduto")
-const precoProduto = document.querySelector("#precoProduto")
-const mensagem = document.querySelector("#mensagem")
-const resultado = document.querySelector("#resultado")
-
-// 1. Capture o nome e o preço dos inputs.
-
-// 2. Utilize trim() para remover os espaços
-// desnecessários do nome e do preço.
-
-// 3. Verifique se algum dos campos está vazio.
-
-// 4. Caso algum campo esteja vazio:
-// - Mostre "Preencha todos os campos!" em mensagem
-// utilizando textContent.
-// - Não gere o cadastro.
-
-// 5. Caso os campos estejam preenchidos:
-// - Limpe a mensagem anterior.
-// - Utilize innerHTML para inserir:
-//   Um h2 com o nome do produto.
-//   Um p com o preço do produto.
-
-// 6. Após cadastrar, limpe os dois inputs
-// utilizando value.
-
 
 
 // 1. Selecione TODOS os elementos com a classe "itemGasto" e guarde em uma variável
