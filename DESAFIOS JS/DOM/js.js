@@ -994,13 +994,18 @@ metasLista.forEach((item)=>{
     if(item.concluida){
         lista2.classList.add("feita")
     }
-    item.append(lista2)
+    listaMetas.append(lista2)
 })
 
 // 3. Depois de montar a lista, remova da página apenas os li
 //    que tiverem a classe "feita"
 //    Dica: use querySelectorAll e o método remove()
-
+listaMetas.forEach((item)=>{
+    if(item.classList === "feito"){
+        item.remove()
+    }
+    
+})
 
 // 4. Por fim, conte quantos li restaram na lista (consulte a página,
 //    não o array) e escreva em "mensagemVazia":
