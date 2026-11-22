@@ -979,46 +979,79 @@ const metasLista = [
   { titulo: "Viagem", concluida: false },
   { titulo: "Curso de inglês", concluida: true }
 ];
+
 // 1. Selecione o ul "listaMetas" e o parágrafo "mensagemVazia"
-const listaMetas = document.querySelector("#listaMetas")
-const mensagemVazia = document.querySelector("#mensagemVazia")
+const ulMetas = document.querySelector("#listaMetas");
+const avisoVazio = document.querySelector("#mensagemVazia");
 
 // 2. Percorra o array metasLista com forEach e, para cada meta:
 //    - crie um elemento li com createElement
 //    - coloque o título da meta como texto do li
 //    - se a meta estiver concluída, adicione a classe "feita" no li
 //    - coloque o li dentro do ul com append
-metasLista.forEach((item)=>{
-    const lista2 = document.createElement("li")
-    lista2.textContent =item.titulo
-    if(item.concluida){
-        lista2.classList.add("feita")
-    }
-    listaMetas.append(lista2)
-})
+metasLista.forEach((metaItem) => {
+  const itemMeta = document.createElement("li");
+  itemMeta.textContent = metaItem.titulo;
+
+  if (metaItem.concluida) {
+    itemMeta.classList.add("feita");
+  }
+
+  ulMetas.append(itemMeta);
+});
 
 // 3. Depois de montar a lista, remova da página apenas os li
 //    que tiverem a classe "feita"
 //    Dica: use querySelectorAll e o método remove()
-listaMetas.forEach((item)=>{
-    if(item.classList === "feito"){
-        item.remove()
-    }
-    
-})
+const itensConcluidos = ulMetas.querySelectorAll("li.feita");
+itensConcluidos.forEach((itemConcluido) => {
+  itemConcluido.remove();
+});
 
 // 4. Por fim, conte quantos li restaram na lista (consulte a página,
 //    não o array) e escreva em "mensagemVazia":
 //    - se restou pelo menos 1: "Metas pendentes: X"
 //    - se não restou nenhum: "Nenhuma meta pendente"
+const totalRestante = ulMetas.querySelectorAll("li").length;
 
-// Regras: use createElement, append, classList, remove e textContent
-// Não use innerHTML
+if (totalRestante >= 1) {
+  avisoVazio.textContent = `Metas pendentes: ${totalRestante}`;
+} else {
+  avisoVazio.textContent = "Nenhuma meta pendente";
+}
+
+
+// 1. Selecione todos os elementos acima (formulário, campos, botão, lista e parágrafo)
+
+// 2. Leia os valores dos campos e guarde em variáveis:
+//    - descrição (texto)
+//    - valor (precisa ser número, não texto)
+//    - categoria (o value do select)
+//    - paga (true ou false, vindo do checkbox)
+
+// 3. Se a descrição estiver vazia OU o valor for menor ou igual a 0:
+//    - desative o botão "Salvar" (propriedade disabled)
+//    - escreva em "statusDespesa": "Dados inválidos"
+//    - e não crie nada na lista
+//    Senão, siga para os próximos passos
+
+// 4. Crie um li com o texto: "Academia - R$ 89.90"
+//    (use os valores lidos nas variáveis; o valor deve ter sempre 2 casas decimais)
+
+// 5. Guarde a categoria no próprio li usando dataset (data-categoria)
+//    e um id no dataset (data-id) com o valor 1
+//    Se a despesa estiver paga, adicione a classe "paga" no li
+
+// 6. Coloque o li na lista e escreva em "statusDespesa": "Despesa salva"
+
+// 7. Depois de salvar, limpe os campos: descrição e valor vazios,
+//    checkbox desmarcado (não use form.reset())
+
+// 8. Mostre no console o valor de data-categoria do li criado,
+//    lendo pelo dataset (não pela variável que você já tinha)
+
+// Teste também o caminho do item 3: mude o value do input no HTML
+// para "" ou "0" e veja o botão desativar.
+
+// Regras: não use innerHTML, não use eventos ainda
 // Use nomes de variáveis diferentes dos exercícios anteriores
-
-
-
-
-
-
-
