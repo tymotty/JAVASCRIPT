@@ -1055,3 +1055,33 @@ if (totalRestante >= 1) {
 
 // Regras: não use innerHTML, não use eventos ainda
 // Use nomes de variáveis diferentes dos exercícios anteriores
+
+
+
+
+
+const nomeProduto1 = document.querySelector("#nomeProduto")
+const precoProduto = document.querySelector("#precoProduto")
+const mensagem = document.querySelector("#mensagem")
+const resultado = document.querySelector("#resultado")
+
+// 1. Capture o nome e o preço dos inputs.
+
+// 2. Utilize trim() para remover os espaços
+// desnecessários do nome e do preço.
+
+// 3. Verifique se algum dos campos está vazio.
+
+// 4. Caso algum campo esteja vazio:
+// - Mostre "Preencha todos os campos!" em mensagem
+// utilizando textContent.
+// - Não gere o cadastro.
+
+// 5. Caso os campos estejam preenchidos:
+// - Limpe a mensagem anterior.
+// - Utilize innerHTML para inserir:
+//   Um h2 com o nome do produto.
+//   Um p com o preço do produto.
+
+// 6. Após cadastrar, limpe os dois inputs
+// utilizando value.
