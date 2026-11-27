@@ -1066,22 +1066,35 @@ const mensagem = document.querySelector("#mensagem")
 const resultado = document.querySelector("#resultado")
 
 // 1. Capture o nome e o preço dos inputs.
+const nome7 = nomeProduto1.value
+const preco7 = precoProduto.value
 
 // 2. Utilize trim() para remover os espaços
 // desnecessários do nome e do preço.
+const nomeLimpo = nome7.trim()
+const precoLimpo = preco7.trim()
 
 // 3. Verifique se algum dos campos está vazio.
+if (nomeLimpo === "" || precoLimpo === "") {
+  // 4. Caso algum campo esteja vazio:
+  // - Mostre "Preencha todos os campos!" em mensagem
+  // utilizando textContent.
+  // - Não gere o cadastro.
+  mensagem.textContent = "Preencha todos os campos!"
+} else {
+  // 5. Caso os campos estejam preenchidos:
+  // - Limpe a mensagem anterior.
+  // - Utilize innerHTML para inserir:
+  //   Um h2 com o nome do produto.
+  //   Um p com o preço do produto.
+  mensagem.textContent = ""
+  resultado.innerHTML = `
+    <h2>${nomeLimpo}</h2>
+    <p>${precoLimpo}</p>
+  `
 
-// 4. Caso algum campo esteja vazio:
-// - Mostre "Preencha todos os campos!" em mensagem
-// utilizando textContent.
-// - Não gere o cadastro.
-
-// 5. Caso os campos estejam preenchidos:
-// - Limpe a mensagem anterior.
-// - Utilize innerHTML para inserir:
-//   Um h2 com o nome do produto.
-//   Um p com o preço do produto.
-
-// 6. Após cadastrar, limpe os dois inputs
-// utilizando value.
+  // 6. Após cadastrar, limpe os dois inputs
+  // utilizando value.
+  nomeProduto1.value = ""
+  precoProduto.value = ""
+}
