@@ -301,6 +301,24 @@
     <p id="mensagem"></p>
     <div id="resultado"></div>
 </div>
+
+
+
+<form id="filtroAssinaturas">
+  <select id="categoriaFiltro">
+    <option value="todas">Todas</option>
+    <option value="streaming" selected>Streaming</option>
+    <option value="estudo">Estudo</option>
+  </select>
+  <input type="checkbox" id="somenteAtivas" checked>
+  <input type="number" id="limiteMensal" value="50">
+</form>
+<ul id="painelAssinaturas"></ul>
+<p id="resumoPainel"></p>
+<style>
+  .inativa { opacity: 0.5; }
+  .acima-limite { color: red; font-weight: bold; }
+</style>
 </body>
 
 </html>

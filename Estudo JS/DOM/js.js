@@ -1108,3 +1108,46 @@ if (nomeLimpo === "" || precoLimpo === "") {
   nomeProduto1.value = ""
   precoProduto.value = ""
 }
+
+
+const assinaturasBase = [
+  { id: 11, nome: "Streaming de vídeo", preco: 39.9, categoria: "streaming", ativa: true },
+  { id: 12, nome: "Streaming de música", preco: 21.9, categoria: "streaming", ativa: false },
+  { id: 13, nome: "Plataforma de cursos", preco: 49, categoria: "estudo", ativa: true },
+  { id: 14, nome: "Aulas de idiomas", preco: 79.9, categoria: "estudo", ativa: true }
+];
+
+// 1. Selecione o select, os dois inputs, o ul e o parágrafo "resumoPainel"
+
+// 2. Leia e guarde em variáveis:
+//    - a categoria escolhida (value do select)
+//    - se "somenteAtivas" está marcado (true/false)
+//    - o limite mensal (como número)
+
+// 3. Use filter() para criar um novo array com as assinaturas que passam:
+//    - se a categoria não for "todas", só entram as dessa categoria
+//    - se "somenteAtivas" estiver marcado, só entram as ativas
+
+// 4. Para cada assinatura filtrada, crie um li:
+//    - dentro do li, crie um span com o nome da assinatura e coloque o span no li
+//    - dataset do li: data-id e data-categoria
+//    - use setAttribute para colocar no li o atributo title com
+//      "Preço: R$ 39.90" (2 casas decimais, valor da própria assinatura)
+//    - se a assinatura não estiver ativa, adicione a classe "inativa" no li
+//    - coloque o li no ul
+
+// 5. Depois de montar, selecione todos os span dentro do ul.
+//    Para cada span, use closest("li") para chegar ao li dele e mostre
+//    no console: "id - nome" (o id vem do dataset do li, o nome do span)
+
+// 6. Calcule o total de preços das assinaturas exibidas (use forEach
+//    com uma variável acumuladora, sem reduce) e escreva em "resumoPainel":
+//    "Total: R$ X (N assinaturas)" com o total em 2 casas decimais
+//    - se o total for maior que o limite mensal, adicione a classe
+//      "acima-limite" no parágrafo
+//    - se não restou nenhuma assinatura, escreva "Nenhuma assinatura encontrada",
+//      não mostre total e desative o input do limite mensal (disabled)
+
+// Dica: teste mudando o select, o checkbox e o limite diretamente no HTML
+// Regras: não use innerHTML, não use eventos ainda
+// Use nomes de variáveis diferentes dos exercícios anteriores
