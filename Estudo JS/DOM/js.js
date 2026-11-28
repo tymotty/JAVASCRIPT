@@ -1021,40 +1021,50 @@ if (totalRestante >= 1) {
 }
 
 
-// 1. Selecione todos os elementos acima (formulário, campos, botão, lista e parágrafo)
+// 1. Selecionar os elementos
+const formularioGasto = document.querySelector("#formDespesa");
+const campoDescricao = document.querySelector("#descricaoDespesa");
+const campoValor = document.querySelector("#valorDespesa");
+const campoCategoria = document.querySelector("#categoriaDespesa");
+const campoPaga = document.querySelector("#pagaDespesa");
+const botaoSalvarGasto = document.querySelector("#botaoSalvar");
+const listaGastosSalvos = document.querySelector("#listaDespesas");
+const textoStatus = document.querySelector("#statusDespesa");
 
-// 2. Leia os valores dos campos e guarde em variáveis:
-//    - descrição (texto)
-//    - valor (precisa ser número, não texto)
-//    - categoria (o value do select)
-//    - paga (true ou false, vindo do checkbox)
+// 2. Ler os valores
+const descricaoLida = campoDescricao.value;
+const valorLido = Number(campoValor.value);
+const categoriaLida = campoCategoria.value;
+const pagaLida = campoPaga.checked;
 
-// 3. Se a descrição estiver vazia OU o valor for menor ou igual a 0:
-//    - desative o botão "Salvar" (propriedade disabled)
-//    - escreva em "statusDespesa": "Dados inválidos"
-//    - e não crie nada na lista
-//    Senão, siga para os próximos passos
+// 3. Validar
+if (descricaoLida === "" || valorLido <= 0) {
+  botaoSalvarGasto.disabled = true;
+  textoStatus.textContent = "Dados inválidos";
+} else {
+  // 4. Criar o li
+  const itemDespesa = document.createElement("li");
+  itemDespesa.textContent = `${descricaoLida} - R$ ${valorLido.toFixed(2)}`;
 
-// 4. Crie um li com o texto: "Academia - R$ 89.90"
-//    (use os valores lidos nas variáveis; o valor deve ter sempre 2 casas decimais)
+  // 5. Dataset e classe
+  itemDespesa.dataset.categoria = categoriaLida;
+  itemDespesa.dataset.id = 1;
+  if (pagaLida) {
+    itemDespesa.classList.add("paga");
+  }
 
-// 5. Guarde a categoria no próprio li usando dataset (data-categoria)
-//    e um id no dataset (data-id) com o valor 1
-//    Se a despesa estiver paga, adicione a classe "paga" no li
+  // 6. Colocar na lista e avisar
+  listaGastosSalvos.append(itemDespesa);
+  textoStatus.textContent = "Despesa salva";
 
-// 6. Coloque o li na lista e escreva em "statusDespesa": "Despesa salva"
+  // 7. Limpar os campos
+  campoDescricao.value = "";
+  campoValor.value = "";
+  campoPaga.checked = false;
 
-// 7. Depois de salvar, limpe os campos: descrição e valor vazios,
-//    checkbox desmarcado (não use form.reset())
-
-// 8. Mostre no console o valor de data-categoria do li criado,
-//    lendo pelo dataset (não pela variável que você já tinha)
-
-// Teste também o caminho do item 3: mude o value do input no HTML
-// para "" ou "0" e veja o botão desativar.
-
-// Regras: não use innerHTML, não use eventos ainda
-// Use nomes de variáveis diferentes dos exercícios anteriores
+  // 8. Ler pelo dataset
+  console.log(itemDespesa.dataset.categoria);
+}
 
 
 
